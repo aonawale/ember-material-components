@@ -5,12 +5,13 @@ export default Mixin.create({
   hasRipples: true,
   classNameBindings: ['hasRipples:mdc-ripple-surface'],
 
-  _mdcRippleComponent: null,
+  _mdcRipple: null,
 
   didInsertElement() {
     this._super(...arguments);
     if (get(this, 'hasRipples')) {
-      set(this, '_mdcRipple', mdc.ripple.MDCRipple.attachTo(this.element));
+      let ripple = new mdc.ripple.MDCRipple(get(this, 'element'));
+      set(this, '_mdcRipple', ripple);
     }
   },
 

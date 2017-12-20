@@ -1,24 +1,54 @@
-{{#mdc-button icon="favorite"}}
-  Yay!
-{{/mdc-button}}
+{{!-- <nav class="mdc-permanent-drawer mdc-typography">
+  <div class="mdc-permanent-drawer__toolbar-spacer"></div>
+  <div class="mdc-permanent-drawer__content">
+    <nav id="icon-with-text-demo" class="mdc-list">
+      <a class="mdc-list-item mdc-list-item--activated" href="#">
+        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">inbox</i>Inbox
+      </a>
+      <a class="mdc-list-item" href="#">
+        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">star</i>Star
+      </a>
+    </nav>
+  </div>
+</nav> --}}
 
-{{mdc-button text="Icon" icon="alarm"}}
-{{mdc-button text="Raised" isRaised=true}}
-{{mdc-button text="Stroked" isStroked=true}}
-{{mdc-button text="Unelevated" isUnelevated=true}}
-{{mdc-button text="Dense" isDense=true}}
-{{mdc-button text="Compact" isCompact=true}}
-{{mdc-button text="Disabled" disabled=true}}
+<div>
+  {{#mdc-toolbar isFixed=true contentSelector="#main-page" as |toolbar|}}
+    <div class="mdc-toolbar__row">
+      <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
+        <a>{{toolbar.menu}}</a>
+        <span class="mdc-toolbar__title">Title</span>
+      </section>
+    </div>
+  {{/mdc-toolbar}}
 
-{{#mdc-card title="Title goes here" subtitle="Subtitle here" as |card|}}
-  <section class="mdc-card__supporting-text">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-    veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-    commodo consequat.
-  </section>
-  <section class="mdc-card__actions">
-    {{card.action text="Action 1"}}
-    {{card.action text="Action 2"}}
-  </section>
-{{/mdc-card}}
+  <main id="main-page" class="mdc-toolbar-fixed-adjust">
+    <p>{{outlet}}</p>
+  </main>
+</div>
+
+
+{{!-- {{#mdc-toolbar isFixed=true contentSelector="#main-page" as |toolbar|}}
+  <div class="mdc-toolbar__row">
+    <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
+      <a>{{toolbar.menu}}</a>
+      <span class="mdc-toolbar__title">Title</span>
+    </section>
+  </div>
+{{/mdc-toolbar}}
+
+<div class="content">
+  <nav class="mdc-permanent-drawer mdc-typography">
+    <nav id="icon-with-text-demo" class="mdc-list">
+      <a class="mdc-list-item mdc-list-item--activated" href="#">
+        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">inbox</i>Inbox
+      </a>
+      <a class="mdc-list-item" href="#">
+        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">star</i>Star
+      </a>
+    </nav>
+  </nav>
+  <main id="main-page" class="mdc-toolbar-fixed-adjust">
+    <p>{{outlet}}</p>
+  </main>
+</div> --}}

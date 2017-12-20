@@ -12,7 +12,14 @@ module.exports = {
   included: function(app) {
     this._super.included.apply(this, arguments);
     let nodeModules = nodeModulesPath(this.root);
-    app.import(`${nodeModules}/material-components-web/dist/material-components-web.js`);
+
+    app.import(`${nodeModules}/@material/base/dist/mdc.base.js`);
+    app.import(`${nodeModules}/@material/ripple/dist/mdc.ripple.js`);
+    app.import(`${nodeModules}/@material/checkbox/dist/mdc.checkbox.js`);
+    app.import(`${nodeModules}/@material/dialog/dist/mdc.dialog.js`);
+    app.import(`${nodeModules}/@material/drawer/dist/mdc.drawer.js`);
+    app.import(`${nodeModules}/@material/selection-control/dist/mdc.selectionControl.js`);
+    app.import(`${nodeModules}/@material/toolbar/dist/mdc.toolbar.js`);
   },
 
   treeForStyles: function treeForStyles(tree) {

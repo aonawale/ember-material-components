@@ -18,10 +18,19 @@
     "test": "ember try:each"
   },
   "dependencies": {
+    "@material/base": "^0.24.0",
+    "@material/button": "^0.27.0",
+    "@material/card": "^0.27.0",
+    "@material/checkbox": "^0.27.0",
+    "@material/dialog": "^0.27.0",
+    "@material/drawer": "^0.27.0",
+    "@material/list": "^0.27.0",
+    "@material/ripple": "^0.27.0",
+    "@material/toolbar": "^0.27.0",
+    "@material/typography": "^0.3.0",
     "ember-cli-babel": "^6.6.0",
-    "ember-cli-sass": "^7.1.2",
     "ember-cli-htmlbars": "^2.0.3",
-    "material-components-web": "^0.27.0"
+    "ember-cli-sass": "^7.1.2"
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",

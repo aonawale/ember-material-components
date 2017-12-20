@@ -1,0 +1,118 @@
+{{#mdc-button icon="favorite"}}
+  Yay!
+{{/mdc-button}}
+
+{{mdc-button text="Icon" icon="alarm"}}
+{{mdc-button text="Raised" isRaised=true}}
+{{mdc-button text="Stroked" isStroked=true}}
+{{mdc-button text="Unelevated" isUnelevated=true}}
+{{mdc-button text="Dense" isDense=true}}
+{{mdc-button text="Compact" isCompact=true}}
+{{mdc-button text="Disabled" disabled=true}}
+
+{{#mdc-card title="Title goes here" subtitle="Subtitle here" as |card|}}
+  <section class="mdc-card__supporting-text">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+    veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+    commodo consequat.
+  </section>
+  <section class="mdc-card__actions">
+    {{card.action text="Action 1"}}
+    {{card.action text="Action 2"}}
+  </section>
+{{/mdc-card}}
+
+{{mdc-checkbox toggle=(action 'toggleCheckbox') checkboxId="0244" checked=showModal}}Show Modal
+{{mdc-checkbox toggle=(action 'toggleListCheckbox') checkboxId="0123" checked=showListModal}}Show List Modal
+
+{{#mdc-dialog
+  show=showModal
+  id="my-mdc-dialog"
+  role="alertdialog"
+  aria-labelledby="my-mdc-dialog-label"
+  aria-describedby="my-mdc-dialog-description" as |dialog|}}
+    <header class="mdc-dialog__header">
+      <h2 id="my-mdc-dialog-label" class="mdc-dialog__header__title">
+        Use Google's location service?
+      </h2>
+    </header>
+    <section id="my-mdc-dialog-description" class="mdc-dialog__body">
+      Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.
+    </section>
+    <footer class="mdc-dialog__footer">
+      {{dialog.footer-action text="Decline" click=(action 'hideModal')}}
+      {{dialog.footer-action text="Accept" click=(action 'hideModal')}}
+    </footer>
+{{/mdc-dialog}}
+
+{{#mdc-dialog
+  show=showListModal
+  id="mdc-dialog-with-list"
+  role="alertdialog"
+  aria-labelledby="mdc-dialog-with-list-label"
+  aria-describedby="mdc-dialog-with-list-description" as |dialog|}}
+    <header class="mdc-dialog__header">
+      <h2 id="mdc-dialog-with-list-label" class="mdc-dialog__header__title">
+        Choose a Ringtone
+      </h2>
+    </header>
+    <section id="mdc-dialog-with-list-description" class="mdc-dialog__body mdc-dialog__body--scrollable">
+      <ul class="mdc-list">
+        <li class="mdc-list-item">None</li>
+        <li class="mdc-list-item">Callisto</li>
+        <li class="mdc-list-item">Ganymede</li>
+        <li class="mdc-list-item">Luna</li>
+        <li class="mdc-list-item">Marimba</li>
+        <li class="mdc-list-item">Schwifty</li>
+        <li class="mdc-list-item">Callisto</li>
+        <li class="mdc-list-item">Ganymede</li>
+        <li class="mdc-list-item">Luna</li>
+        <li class="mdc-list-item">Marimba</li>
+        <li class="mdc-list-item">Schwifty</li>
+      </ul>
+    </section>
+    <footer class="mdc-dialog__footer">
+      {{dialog.footer-action text="Decline" click=(action 'hideListModal')}}
+      {{dialog.footer-action text="Accept" click=(action 'hideListModal')}}
+    </footer>
+{{/mdc-dialog}}
+
+{{#mdc-list isAvaterList=true as |list|}}
+  {{#list.item}}
+    <img class="mdc-list-item__graphic" src="http://via.placeholder.com/56x56" width="56" height="56" alt="Picture of Janet Perkins">
+    Janet Perkins
+  {{/list.item}}
+  {{#list.item}}
+    <img class="mdc-list-item__graphic" src="http://via.placeholder.com/56x56" width="56" height="56" alt="Picture of Mary Johnson">
+    Mary Johnson
+  {{/list.item}}
+{{/mdc-list}}
+
+{{#mdc-list isTwoLineListItem=true as |list|}}
+  {{#list.item}}
+    <span class="mdc-list-item__text">
+      Two-line item
+      <span class="mdc-list-item__secondary-text">Secondary text</span>
+    </span>
+  {{/list.item}}
+  {{#list.item}}
+    <span class="mdc-list-item__text">
+      Two-line item
+      <span class="mdc-list-item__secondary-text">Secondary text</span>
+    </span>
+  {{/list.item}}
+{{/mdc-list}}
+
+{{#mdc-list as |list|}}
+  {{#list.item}}
+    <i class="mdc-list-item__graphic material-icons" aria-hidden="true">network_wifi</i>
+    Wi-Fi
+  {{/list.item}}
+  {{#list.item}}
+    <i class="mdc-list-item__graphic material-icons" aria-hidden="true">bluetooth</i>
+    Bluetooth
+  {{/list.item}}
+{{/mdc-list}}
+
+
