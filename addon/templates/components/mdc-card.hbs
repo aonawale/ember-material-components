@@ -1,0 +1,7 @@
+{{#if (or title subtitle)}}
+  <section class="mdc-card__primary">
+    {{#if title}}<h1 class="mdc-card__title mdc-card__title--large">{{title}}</h1>{{/if}}
+    {{#if subtitle}}<h2 class="mdc-card__subtitle">{{subtitle}}</h2>{{/if}}
+  </section>
+{{/if}}
+{{yield (hash action=(component 'mdc-card-action'))}}
