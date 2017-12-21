@@ -20,6 +20,12 @@ module.exports = {
     app.import(`${nodeModules}/@material/drawer/dist/mdc.drawer.js`);
     app.import(`${nodeModules}/@material/selection-control/dist/mdc.selectionControl.js`);
     app.import(`${nodeModules}/@material/toolbar/dist/mdc.toolbar.js`);
+    app.import(`${nodeModules}/@material/icon-toggle/dist/mdc.iconToggle.js`);
+    app.import(`${nodeModules}/@material/linear-progress/dist/mdc.linearProgress.js`);
+    app.import(`${nodeModules}/@material/snackbar/dist/mdc.snackbar.js`);
+    app.import(`${nodeModules}/@material/menu/dist/mdc.menu.js`);
+    app.import(`${nodeModules}/@material/radio/dist/mdc.radio.js`);
+    app.import(`${nodeModules}/@material/slider/dist/mdc.slider.js`);
   },
 
   treeForStyles: function treeForStyles(tree) {

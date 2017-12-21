@@ -3,10 +3,16 @@ import Controller from '@ember/controller';
 export default Controller.extend({
   showModal: false,
   showListModal: false,
+  iconName: 'favorite',
+  offIcon: 'favorite_border',
 
   actions: {
-    toggleCheckbox() {
+    showModal() {
       this.toggleProperty('showModal')
+    },
+    toggleCheckbox() {
+      this.set('iconName', 'create')
+      this.set('offIcon', 'favorite')
     },
     toggleListCheckbox() {
       this.toggleProperty('showListModal')

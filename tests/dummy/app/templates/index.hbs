@@ -23,11 +23,48 @@
   </section>
 {{/mdc-card}}
 
-{{mdc-checkbox toggle=(action 'toggleCheckbox') checkboxId="0244" checked=showModal}}Show Modal
+<p>{{mdc-radio}}</p>
+<p>{{mdc-radio isDisabled=true}}</p>
+
+<p>{{mdc-slider min=0 max=100}}</p>
+<p>{{mdc-slider min=0 max=100 isDiscrete=true}}</p>
+<p>{{mdc-slider min=0 max=100 isDiscrete=true hasTrackMarkers=true step=5}}</p>
+<p>{{mdc-slider min=0 max=100 isDisabled=true}}</p>
+
+<p>
+  <div class="mdc-menu-anchor">
+    {{mdc-checkbox toggle=(action (mut showMenu) true) checked=showMenu}}Open Menu
+    {{#mdc-menu isOpened=showMenu cancel=(action (mut showMenu) false) select=(action (mut showMenu) false) as |menu|}}
+      {{#menu.list}}
+        {{#menu.item}}A Menu Item{{/menu.item}}
+        {{#menu.item aria-disabled="true"}}Another Menu Item{{/menu.item}}
+      {{/menu.list}}
+    {{/mdc-menu}}
+  </div>
+</p>
+
+{{mdc-fab icon="create" class="app-fab--absolute" click=(action 'showModal')}}
+{{mdc-fab icon="favorite" isMini=true click=(action (mut showSnack) true)}}
+
+{{mdc-icon-toggle "favorite" offIcon="favorite_border"}}
+
 {{mdc-checkbox toggle=(action 'toggleListCheckbox') checkboxId="0123" checked=showListModal}}Show List Modal
 
+<p>
+  {{mdc-snackbar
+    isShowing=showSnack
+    hidegg=(action (mut showSnack) false)
+    message="This means sending anonymous location data to Google"}}</p>
+
+<p>{{mdc-linear-progress isReversed=true isIndeterminate=true}}</p>
+
+<p>{{mdc-linear-progress isIndeterminate=true}}</p>
+
+<p>{{mdc-linear-progress progress=0.7}}</p>
+<p>{{mdc-linear-progress progress=0.3 buffer=0.5}}</p>
+
 {{#mdc-dialog
-  show=showModal
+  isShowing=showModal
   id="my-mdc-dialog"
   role="alertdialog"
   aria-labelledby="my-mdc-dialog-label"
@@ -47,7 +84,7 @@
 {{/mdc-dialog}}
 
 {{#mdc-dialog
-  show=showListModal
+  isShowing=showListModal
   id="mdc-dialog-with-list"
   role="alertdialog"
   aria-labelledby="mdc-dialog-with-list-label"
@@ -80,11 +117,15 @@
 
 {{#mdc-list isAvaterList=true as |list|}}
   {{#list.item}}
-    <img class="mdc-list-item__graphic" src="http://via.placeholder.com/56x56" width="56" height="56" alt="Picture of Janet Perkins">
+    <span class="mdc-list-item__start-detail">
+      <img class="mdc-list-item__graphic" src="http://via.placeholder.com/30x30">
+    </span>
     Janet Perkins
   {{/list.item}}
   {{#list.item}}
-    <img class="mdc-list-item__graphic" src="http://via.placeholder.com/56x56" width="56" height="56" alt="Picture of Mary Johnson">
+    <span class="mdc-list-item__start-detail">
+      <img class="mdc-list-item__graphic" src="http://via.placeholder.com/30x30">
+    </span>
     Mary Johnson
   {{/list.item}}
 {{/mdc-list}}
@@ -106,13 +147,25 @@
 
 {{#mdc-list as |list|}}
   {{#list.item}}
-    <i class="mdc-list-item__graphic material-icons" aria-hidden="true">network_wifi</i>
+    <i class="mdc-list-item__graphic material-icons mdc-list-item__start-detail" aria-hidden="true">network_wifi</i>
     Wi-Fi
   {{/list.item}}
   {{#list.item}}
-    <i class="mdc-list-item__graphic material-icons" aria-hidden="true">bluetooth</i>
+    <i class="mdc-list-item__graphic material-icons mdc-list-item__start-detail" aria-hidden="true">bluetooth</i>
     Bluetooth
   {{/list.item}}
 {{/mdc-list}}
+
+
+
+
+
+
+
+
+
+
+
+
 
 

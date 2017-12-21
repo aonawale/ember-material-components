@@ -1,5 +1,5 @@
-import Component from '@ember/component';
 import Ripple from '../mixins/ripple';
+import Component from '@ember/component';
 import { bool } from '@ember/object/computed';
 import layout from '../templates/components/mdc-button';
 

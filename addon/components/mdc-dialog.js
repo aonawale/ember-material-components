@@ -5,7 +5,10 @@ import layout from '../templates/components/mdc-dialog';
 
 export default Component.extend({
   layout,
-  show: true,
+  role: null,
+  'aria-labelledby': null,
+  'aria-describedby': null,
+  isShowing: true,
   tagName: 'aside',
   classNames: ['mdc-dialog'],
   attributeBindings: ['role', 'aria-labelledby', 'aria-describedby'],
@@ -17,7 +20,7 @@ export default Component.extend({
     let dialog = new mdc.dialog.MDCDialog(get(this, 'element'));
     set(this, '_mdcComponent', dialog);
 
-    if (get(this, 'show')) {
+    if (get(this, 'isShowing')) {
       dialog.show();
     }
   },
@@ -26,7 +29,7 @@ export default Component.extend({
     this._super(...arguments);
     let dialog = get(this, '_mdcComponent');
 
-    if (get(this, 'show')) {
+    if (get(this, 'isShowing')) {
       dialog.show();
     } else {
       dialog.close();
