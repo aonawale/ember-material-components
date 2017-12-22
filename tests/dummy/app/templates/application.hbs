@@ -1,14 +1,19 @@
 {{#mdc-toolbar isFixed=true contentSelector="#main-page" as |toolbar|}}
   <div class="mdc-toolbar__row">
     <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
-      <a>{{toolbar.menu}}</a>
+      <a {{action (mut drawerOpen) true}}>{{toolbar.menu}}</a>
       <span class="mdc-toolbar__title">Title</span>
     </section>
   </div>
 {{/mdc-toolbar}}
 
 <div class="content">
-  {{#mdc-permanent-drawer as |drawer|}}
+  {{#mdc-temporary-drawer isOpened=drawerOpen as |drawer|}}
+    <header class="mdc-temporary-drawer__header">
+      <div class="mdc-temporary-drawer__header-content">
+        Header here
+      </div>
+    </header>
     {{#drawer.list as |list|}}
       {{#list.item isActivated=true hasRipples=true}}
         {{mdc-icon "inbox" class="mdc-list-item__graphic mdc-list-item__start-detail" aria-hidden="true"}}Inbox
@@ -17,7 +22,7 @@
         {{mdc-icon "star" class="mdc-list-item__graphic mdc-list-item__start-detail" aria-hidden="true"}}Star
       {{/list.item}}
     {{/drawer.list}}
-  {{/mdc-permanent-drawer}}
+  {{/mdc-temporary-drawer}}
   <main id="main-page" class="mdc-toolbar-fixed-adjust">
     <p>{{outlet}}</p>
   </main>

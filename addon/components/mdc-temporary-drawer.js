@@ -1,24 +1,24 @@
 import Component from '@ember/component';
 import { get, set } from '@ember/object';
-import layout from '../templates/components/mdc-persistent-drawer';
+import layout from '../templates/components/mdc-temporary-drawer';
 
 export default Component.extend({
   layout,
   isOpened: true,
   tagName: 'aside',
-  classNames: ['mdc-persistent-drawer', 'mdc-typography'],
+  classNames: ['mdc-temporary-drawer', 'mdc-typography'],
 
   _mdcComponent: null,
 
   didInsertElement() {
     this._super(...arguments);
-    let drawer = new mdc.drawer.MDCPersistentDrawer(get(this, 'element'));
+    let drawer = new mdc.drawer.MDCTemporaryDrawer(get(this, 'element'));
     set(this, '_mdcComponent', drawer);
 
     this._updateState();
 
-    drawer.listen('MDCPersistentDrawer:open', get(this, 'open'));
-    drawer.listen('MDCPersistentDrawer:close', get(this, 'close'));
+    drawer.listen('MDCTemporaryDrawer:open', get(this, 'open'));
+    drawer.listen('MDCTemporaryDrawer:close', get(this, 'close'));
   },
 
   didUpdateAttrs() {
