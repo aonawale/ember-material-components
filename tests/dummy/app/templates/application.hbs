@@ -1,34 +1,4 @@
-{{!-- <nav class="mdc-permanent-drawer mdc-typography">
-  <div class="mdc-permanent-drawer__toolbar-spacer"></div>
-  <div class="mdc-permanent-drawer__content">
-    <nav id="icon-with-text-demo" class="mdc-list">
-      <a class="mdc-list-item mdc-list-item--activated" href="#">
-        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">inbox</i>Inbox
-      </a>
-      <a class="mdc-list-item" href="#">
-        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">star</i>Star
-      </a>
-    </nav>
-  </div>
-</nav> --}}
-
-<div>
-  {{#mdc-toolbar isFixed=true contentSelector="#main-page" as |toolbar|}}
-    <div class="mdc-toolbar__row">
-      <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
-        <a>{{toolbar.menu}}</a>
-        <span class="mdc-toolbar__title">Title</span>
-      </section>
-    </div>
-  {{/mdc-toolbar}}
-
-  <main id="main-page" class="mdc-toolbar-fixed-adjust">
-    <p>{{outlet}}</p>
-  </main>
-</div>
-
-
-{{!-- {{#mdc-toolbar isFixed=true contentSelector="#main-page" as |toolbar|}}
+{{#mdc-toolbar isFixed=true contentSelector="#main-page" as |toolbar|}}
   <div class="mdc-toolbar__row">
     <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
       <a>{{toolbar.menu}}</a>
@@ -38,17 +8,17 @@
 {{/mdc-toolbar}}
 
 <div class="content">
-  <nav class="mdc-permanent-drawer mdc-typography">
-    <nav id="icon-with-text-demo" class="mdc-list">
-      <a class="mdc-list-item mdc-list-item--activated" href="#">
-        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">inbox</i>Inbox
-      </a>
-      <a class="mdc-list-item" href="#">
-        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">star</i>Star
-      </a>
-    </nav>
-  </nav>
+  {{#mdc-permanent-drawer as |drawer|}}
+    {{#drawer.list as |list|}}
+      {{#list.item isActivated=true hasRipples=true}}
+        {{mdc-icon "inbox" class="mdc-list-item__graphic mdc-list-item__start-detail" aria-hidden="true"}}Inbox
+      {{/list.item}}
+      {{#list.item hasRipples=true}}
+        {{mdc-icon "star" class="mdc-list-item__graphic mdc-list-item__start-detail" aria-hidden="true"}}Star
+      {{/list.item}}
+    {{/drawer.list}}
+  {{/mdc-permanent-drawer}}
   <main id="main-page" class="mdc-toolbar-fixed-adjust">
     <p>{{outlet}}</p>
   </main>
-</div> --}}
+</div>

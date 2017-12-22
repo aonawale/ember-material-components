@@ -1,7 +1,12 @@
 @import "ember-material-components";
 
 #main-page {
-  min-height: 2222px;
+  min-height: 1200px;
+  position: absolute;
+  right: 0;
+  left: 260px;
+  top: 0;
+  bottom: 0;
 }
 
 .app-fab--absolute {

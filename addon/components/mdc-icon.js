@@ -5,7 +5,9 @@ export default Component.extend({
   layout,
   icon: null,
   tagName: 'i',
-  classNames: ['material-icons']
+  'aria-hidden': null,
+  classNames: ['material-icons'],
+  attributeBindings: ['aria-hidden']
 }).reopenClass({
   positionalParams: ['icon']
 });
