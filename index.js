@@ -28,6 +28,8 @@ module.exports = {
     app.import(`${nodeModules}/@material/slider/dist/mdc.slider.js`);
     app.import(`${nodeModules}/@material/textfield/dist/mdc.textfield.js`);
     app.import(`${nodeModules}/@material/tabs/dist/mdc.tabs.js`);
+    app.import(`${nodeModules}/@material/select/dist/mdc.select.js`);
+    app.import(`${nodeModules}/@material/form-field/dist/mdc.formField.js`);
   },
 
   treeForStyles: function treeForStyles(tree) {

@@ -18,7 +18,7 @@ export default MDCBase.extend({
     'isDisabled:mdc-radio--disabled'
   ],
 
-  radioId: computed(function() {
+  inputId: computed(function() {
     return `mdc-radio-${guidFor(this)}`;
   }),
 

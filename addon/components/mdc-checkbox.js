@@ -10,7 +10,7 @@ export default Component.extend({
   classNames: ['mdc-checkbox'],
   classNameBindings: ['isDisabled:mdc-checkbox--disabled'],
 
-  checkboxId: computed(function() {
+  inputId: computed(function() {
     return `mdc-checkbox-${guidFor(this)}`;
   })
 });

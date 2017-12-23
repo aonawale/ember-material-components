@@ -11,6 +11,59 @@
 {{mdc-button text="Disabled" isDisabled=true}}
 
 <p>
+  {{#mdc-form-field}}
+  {{mdc-checkbox inputId="input1234"}}
+    <label for="input1234">Input Label</label>
+  {{/mdc-form-field}}
+</p>
+
+<p>
+  {{#mdc-form-field input=mdcRadio class="mdc-form-field--align-end"}}
+    {{mdc-radio inputId="input2334" initialize=(action (mut mdcRadio))}}
+    <label for="input2334">Input Label</label>
+  {{/mdc-form-field}}
+</p>
+
+<p>
+  {{#mdc-select label="Pick a Food Group" selectedIndex=3 as |select|}}
+    {{#select.menu as |menu|}}
+      {{#menu.list as |list|}}
+        {{#list.item role="option"}}Bread, Cereal, Rice, and Pasta{{/list.item}}
+        {{#list.item role="option"}}Vegetables{{/list.item}}
+        {{#list.item role="option"}}Fruit{{/list.item}}
+        {{#list.item role="option"}}Milk, Yogurt, and Cheese{{/list.item}}
+        {{#list.item role="option"}}Meat, Poultry, Fish, Dry Beans, Eggs, and Nuts{{/list.item}}
+        {{#list.item role="option"}}Fats, Oils, and Sweets{{/list.item}}
+      {{/menu.list}}
+    {{/select.menu}}
+  {{/mdc-select}}
+</p>
+
+<p>
+  {{#mdc-select label="Disabled Food Group" isDisabled=true as |select|}}
+    {{#select.menu as |menu|}}
+      {{#menu.list as |list|}}
+        {{#list.item role="option"}}Bread, Cereal, Rice, and Pasta{{/list.item}}
+        {{#list.item role="option"}}Vegetables{{/list.item}}
+      {{/menu.list}}
+    {{/select.menu}}
+  {{/mdc-select}}
+</p>
+
+<p>
+  {{#mdc-select label="Disabled Item Food Group" as |select|}}
+    {{#select.menu as |menu|}}
+      {{#menu.list as |list|}}
+        {{#list.item role="option"}}Bread, Cereal, Rice, and Pasta{{/list.item}}
+        {{#list.item role="option" isDisabled=true}}Vegetables{{/list.item}}
+        {{#list.item role="option"}}Meat, Poultry, Fish, Dry Beans, Eggs, and Nuts{{/list.item}}
+        {{#list.item role="option" isDisabled=true}}Fats, Oils, and Sweets{{/list.item}}
+      {{/menu.list}}
+    {{/select.menu}}
+  {{/mdc-select}}
+</p>
+
+<p>
   {{#mdc-tab-bar-scroller as |tab-bar-scroller|}}
     {{#tab-bar-scroller.tab-bar activeTabIndex=5 change=(action 'tabBarChange') as |tab-bar|}}
       {{#tab-bar.tab}}Item Two{{/tab-bar.tab}}
@@ -106,9 +159,9 @@
   <div class="mdc-menu-anchor">
     {{mdc-checkbox toggle=(action (mut showMenu) true) checked=showMenu}}Open Menu
     {{#mdc-menu isOpened=showMenu cancel=(action (mut showMenu) false) select=(action (mut showMenu) false) as |menu|}}
-      {{#menu.list}}
-        {{#menu.item}}A Menu Item{{/menu.item}}
-        {{#menu.item isDisabled="true"}}Another Menu Item{{/menu.item}}
+      {{#menu.list role="menu" ariaHidden="true" as |list|}}
+        {{#list.item role="menuitem"}}A Menu Item{{/list.item}}
+        {{#list.item role="menuitem" isDisabled="true"}}Another Menu Item{{/list.item}}
       {{/menu.list}}
     {{/mdc-menu}}
   </div>
@@ -119,7 +172,7 @@
 
 {{mdc-icon-toggle "favorite" offIcon="favorite_border"}}
 
-{{mdc-checkbox toggle=(action 'toggleListCheckbox') checkboxId="0123" checked=showListModal}}Show List Modal
+{{mdc-checkbox toggle=(action 'toggleListCheckbox') checked=showListModal}}Show List Modal
 
 <p>
   {{mdc-snackbar

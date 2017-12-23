@@ -1,0 +1,8 @@
+<div class="mdc-select__surface" tabindex={{if isDisabled "-1" "0"}}>
+  <div class="mdc-select__label {{if hasSelectedOption "mdc-select__label--float-above"}}">{{label}}</div>
+  <div class="mdc-select__selected-text"></div>
+  <div class="mdc-select__bottom-line"></div>
+</div>
+{{yield (hash
+  menu=(component 'mdc-menu' class='mdc-select__menu')
+)}}

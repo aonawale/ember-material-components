@@ -11,7 +11,7 @@ export default Component.extend({
     'isDisabled:mdc-switch--disabled'
   ],
 
-  switchId: computed(function() {
+  inputId: computed(function() {
     return `mdc-switch-${guidFor(this)}`;
   })
 });

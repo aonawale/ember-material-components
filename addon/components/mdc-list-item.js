@@ -1,14 +1,13 @@
 import Ripple from '../mixins/ripple';
 import Component from '@ember/component';
+import { computed, get } from '@ember/object';
 import layout from '../templates/components/mdc-list-item';
 
 export default Component.extend(Ripple, {
   layout,
   tagName: 'li',
   role: null,
-  tabindex: null,
   isDisabled: false,
-  ariaDisabled: false,
   hasRipples: false,
   isSelected: false,
   isActivated: false,
@@ -20,7 +19,17 @@ export default Component.extend(Ripple, {
   attributeBindings: [
     'role',
     'tabindex',
-    'isDisabled:aria-disabled',
-    'ariaDisabled:aria-disabled'
-  ]
+    'ariaDisabled:aria-disabled',
+    'ariaSelected:aria-selected'
+  ],
+
+  tabindex: computed('isDisabled', function() {
+    return get(this, 'isDisabled') ? '-1' : '0';
+  }),
+
+  ariaDisabled: computed('isDisabled', function() {
+    return get(this, 'isDisabled') ? 'true' : 'false';
+  }),
+
+  ariaSelected: computed.oneWay('isSelected')
 });
