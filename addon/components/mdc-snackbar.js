@@ -12,9 +12,9 @@ export default Component.extend({
   actionHandler: null,
   actionOnBottom: false,
   dismissesOnAction: true,
-  'aria-live': 'assertive',
-  'aria-atomic': 'true',
-  'aria-hidden': 'true',
+  ariaLive: 'assertive',
+  ariaAtomic: 'true',
+  ariaHidden: 'true',
   isStartAligned: false,
 
   _mdcComponent: null,
@@ -23,7 +23,11 @@ export default Component.extend({
   classNameBindings: [
     'isStartAligned:mdc-snackbar--align-start'
   ],
-  attributeBindings: ['aria-live', 'aria-atomic', 'aria-hidden'],
+  attributeBindings: [
+    'ariaLive:aria-live',
+    'ariaAtomic:aria-atomic',
+    'ariaHidden:aria-hidden'
+  ],
 
   dataObj: computed('message', 'timeout', 'isMultiline', 'actionText', 'actionHandler', 'actionOnBottom', function() {
     return getProperties(this, 'message', 'timeout', 'isMultiline', 'actionText', 'actionHandler', 'actionOnBottom');

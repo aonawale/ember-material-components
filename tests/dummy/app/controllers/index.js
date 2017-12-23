@@ -7,6 +7,9 @@ export default Controller.extend({
   offIcon: 'favorite_border',
 
   actions: {
+    tabBarChange({ detail }) {
+      console.log(detail)
+    },
     showModal() {
       this.toggleProperty('showModal')
     },

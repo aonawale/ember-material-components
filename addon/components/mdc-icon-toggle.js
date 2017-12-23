@@ -9,9 +9,9 @@ export default MDCIcon.extend({
   offLabel: null,
   offIcon: null,
   role: 'button',
-  'aria-label': false,
-  'aria-disabled': false,
-  'aria-pressed': false,
+  ariaLabel: false,
+  ariaDisabled: false,
+  ariaPressed: false,
   tabindex: 0,
   isDisabled: false,
 
@@ -21,15 +21,15 @@ export default MDCIcon.extend({
   classNameBindings: ['isDisabled:mdc-icon-toggle--disabled'],
   attributeBindings: [
     'role',
-    'aria-pressed',
-    'aria-label',
-    'aria-disabled',
+    'ariaPressed:aria-pressed',
+    'ariaLabel:aria-label',
+    'ariaDisabled:aria-disabled',
     'tabindex',
-    'data-toggle-on',
-    'data-toggle-off'
+    'dataToggleOn:data-toggle-on',
+    'dataToggleOff:data-toggle-off'
   ],
 
-  'data-toggle-on': computed('label', 'icon', 'cssClass', function() {
+  dataToggleOn: computed('label', 'icon', 'cssClass', function() {
     return JSON.stringify({
       label: get(this, 'label'),
       content: get(this, 'icon'),
@@ -37,7 +37,7 @@ export default MDCIcon.extend({
     });
   }),
 
-  'data-toggle-off': computed('offLabel', 'offIcon', 'offCssClass', function() {
+  dataToggleOff: computed('offLabel', 'offIcon', 'offCssClass', function() {
     return JSON.stringify({
       label: get(this, 'offLabel'),
       content: get(this, 'offIcon'),

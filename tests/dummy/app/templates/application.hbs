@@ -8,21 +8,21 @@
 {{/mdc-toolbar}}
 
 <div class="content">
-  {{#mdc-temporary-drawer isOpened=drawerOpen as |drawer|}}
-    <header class="mdc-temporary-drawer__header">
-      <div class="mdc-temporary-drawer__header-content">
+  {{#mdc-permanent-drawer isOpened=drawerOpen close=(action (mut drawerOpen) false) as |drawer|}}
+    <header class="mdc-permanent-drawer__header">
+      <div class="mdc-permanent-drawer__header-content">
         Header here
       </div>
     </header>
     {{#drawer.list as |list|}}
       {{#list.item isActivated=true hasRipples=true}}
-        {{mdc-icon "inbox" class="mdc-list-item__graphic mdc-list-item__start-detail" aria-hidden="true"}}Inbox
+        {{mdc-icon "inbox" class="mdc-list-item__graphic mdc-list-item__start-detail" ariaHidden="true"}}Inbox
       {{/list.item}}
       {{#list.item hasRipples=true}}
-        {{mdc-icon "star" class="mdc-list-item__graphic mdc-list-item__start-detail" aria-hidden="true"}}Star
+        {{mdc-icon "star" class="mdc-list-item__graphic mdc-list-item__start-detail" ariaHidden="true"}}Star
       {{/list.item}}
     {{/drawer.list}}
-  {{/mdc-temporary-drawer}}
+  {{/mdc-permanent-drawer}}
   <main id="main-page" class="mdc-toolbar-fixed-adjust">
     <p>{{outlet}}</p>
   </main>

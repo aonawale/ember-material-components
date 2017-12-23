@@ -1,0 +1,33 @@
+{{#if isLeadingIcon}}
+  {{mdc-icon icon class="mdc-text-field__icon" tabindex=iconTabindex}}
+{{/if}}
+
+<textarea
+  rows={{rows}}
+  cols={{cols}}
+  id={{inputId}}
+  class="mdc-text-field__input"
+  value={{value}}
+  disabled={{isDisabled}}
+  required={{isRequired}}
+  minlength={{minLength}}
+  aria-label={{ariaLabel}}
+  aria-controls={{ariaControls}}>
+</textarea>
+
+{{#if label}}
+  <label class="mdc-text-field__label" for={{inputId}}>{{label}}</label>
+{{/if}}
+{{#if isTrailingIcon}}
+  {{mdc-icon icon class="mdc-text-field__icon" tabindex=iconTabindex}}
+{{/if}}
+{{#unless isOutlined}}
+  <div class="mdc-text-field__bottom-line"></div>
+{{else}}
+  <div class="mdc-text-field__outline">
+    <svg>
+      <path class="mdc-text-field__outline-path"/>
+    </svg>
+  </div>
+  <div class="mdc-text-field__idle-outline"></div>
+{{/unless}}

@@ -8,11 +8,11 @@ export default Component.extend(Ripple, {
   icon: null,
   isMini: false,
   isExited: false,
-  'aria-label': null,
+  ariaLabel: null,
   classNames: ['mdc-fab', 'material-icons'],
   classNameBindings: [
     'isMini:mdc-fab--mini',
     'isExited:mdc-fab--exited'
   ],
-  attributeBindings: ['aria-label']
+  attributeBindings: ['ariaLabel:aria-label']
 });

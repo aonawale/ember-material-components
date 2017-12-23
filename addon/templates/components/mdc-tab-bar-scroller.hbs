@@ -1,0 +1,11 @@
+<div class="mdc-tab-bar-scroller__indicator mdc-tab-bar-scroller__indicator--back">
+  {{mdc-icon prevIcon class="mdc-tab-bar-scroller__indicator__inner" ariaLabel="scroll back button"}}
+</div>
+<div class="mdc-tab-bar-scroller__scroll-frame">
+  {{yield (hash
+    tab-bar=(component 'mdc-tab-bar' mdcClass=null _mdcComponent=_mdcComponent.tabBar class='mdc-tab-bar-scroller__scroll-frame__tabs')
+  )}}
+</div>
+<div class="mdc-tab-bar-scroller__indicator mdc-tab-bar-scroller__indicator--forward">
+  {{mdc-icon nextIcon class="mdc-tab-bar-scroller__indicator__inner" ariaLabel="scroll forward button"}}
+</div>

@@ -10,6 +10,77 @@
 {{mdc-button text="Compact" isCompact=true}}
 {{mdc-button text="Disabled" disabled=true}}
 
+<p>
+  {{#mdc-tab-bar-scroller as |tab-bar-scroller|}}
+    {{#tab-bar-scroller.tab-bar activeTabIndex=5 change=(action 'tabBarChange') as |tab-bar|}}
+      {{#tab-bar.tab}}Item Two{{/tab-bar.tab}}
+      {{#tab-bar.tab}}Item Two{{/tab-bar.tab}}
+      {{#tab-bar.tab}}Item Three{{/tab-bar.tab}}
+      {{#tab-bar.tab}}Item Four{{/tab-bar.tab}}
+      {{#tab-bar.tab}}Item Five{{/tab-bar.tab}}
+      {{#tab-bar.tab}}Item Six{{/tab-bar.tab}}
+      {{#tab-bar.tab}}Item Seven{{/tab-bar.tab}}
+      {{#tab-bar.tab}}Item Eight{{/tab-bar.tab}}
+      {{#tab-bar.tab}}Item Night{{/tab-bar.tab}}
+    {{/tab-bar-scroller.tab-bar}}
+  {{/mdc-tab-bar-scroller}}
+</p>
+
+<p>
+  {{#mdc-tab-bar activeTabIndex=1 change=(action 'tabBarChange') as |tab-bar|}}
+    {{#tab-bar.tab}}Home{{/tab-bar.tab}}
+    {{#tab-bar.tab}}Merchandise{{/tab-bar.tab}}
+    {{#tab-bar.tab}}About Us{{/tab-bar.tab}}
+  {{/mdc-tab-bar}}
+</p>
+
+<p>
+  {{#mdc-tab-bar as |tab-bar|}}
+    {{#tab-bar.tab}}{{tab-bar.icon "phone" ariaLabel="Recents"}}{{/tab-bar.tab}}
+    {{#tab-bar.tab}}{{tab-bar.icon "favorite" ariaLabel="Favorites"}}{{/tab-bar.tab}}
+    {{#tab-bar.tab}}{{tab-bar.icon "person_pin" ariaLabel="nearby"}}{{/tab-bar.tab}}
+  {{/mdc-tab-bar}}
+</p>
+
+<p>
+  {{#mdc-tab-bar as |tab-bar|}}
+    {{#tab-bar.tab}}
+      {{tab-bar.icon "phone" ariaLabel="Recents"}}
+      <span class="mdc-tab__icon-text">Recents</span>
+    {{/tab-bar.tab}}
+    {{#tab-bar.tab}}
+      {{tab-bar.icon "favorite" ariaLabel="Favorites"}}
+      <span class="mdc-tab__icon-text">Favorites</span>
+    {{/tab-bar.tab}}
+    {{#tab-bar.tab}}
+      {{tab-bar.icon "person_pin" ariaLabel="nearby"}}
+      <span class="mdc-tab__icon-text">Nearby</span>
+    {{/tab-bar.tab}}
+  {{/mdc-tab-bar}}
+</p>
+
+<p>
+  {{mdc-textfield label="First Name"}}
+  <p class="mdc-text-field-helper-text" aria-hidden="true">
+    This will be displayed on your public profile
+  </p>
+  {{mdc-textfield label="Last Name" value="Ayo" ariaControls="username-helper-text"}}
+  <p id="username-helper-text" class="mdc-text-field-helper-text" aria-hidden="true">
+    This will be displayed on your public profile
+  </p>
+  {{mdc-textfield label="Email" isRequired=true}}
+  {{mdc-textfield placeholder="Full-Width Text Field" isFullWidth=true}}
+  {{mdc-textfield label="Outlined" isOutlined=true}}
+  {{mdc-textfield label="Disabled" isDisabled=true}}
+  {{mdc-textfield label="Your Name" icon="event"}}
+  {{mdc-textfield label="Your Name" icon="event" isTrailingIcon=true iconTabindex=null}}
+</p>
+
+<p>
+  {{mdc-textarea label="First Name"}}
+  {{mdc-textarea label="First Name" isFullWidth=true}}
+</p>
+
 {{#mdc-card title="Title goes here" subtitle="Subtitle here" as |card|}}
   <section class="mdc-card__supporting-text">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -37,7 +108,7 @@
     {{#mdc-menu isOpened=showMenu cancel=(action (mut showMenu) false) select=(action (mut showMenu) false) as |menu|}}
       {{#menu.list}}
         {{#menu.item}}A Menu Item{{/menu.item}}
-        {{#menu.item aria-disabled="true"}}Another Menu Item{{/menu.item}}
+        {{#menu.item isDisabled="true"}}Another Menu Item{{/menu.item}}
       {{/menu.list}}
     {{/mdc-menu}}
   </div>
@@ -67,8 +138,8 @@
   isShowing=showModal
   id="my-mdc-dialog"
   role="alertdialog"
-  aria-labelledby="my-mdc-dialog-label"
-  aria-describedby="my-mdc-dialog-description" as |dialog|}}
+  ariaLabelledby="my-mdc-dialog-label"
+  ariaDescribedby="my-mdc-dialog-description" as |dialog|}}
     <header class="mdc-dialog__header">
       <h2 id="my-mdc-dialog-label" class="mdc-dialog__header__title">
         Use Google's location service?
@@ -87,8 +158,8 @@
   isShowing=showListModal
   id="mdc-dialog-with-list"
   role="alertdialog"
-  aria-labelledby="mdc-dialog-with-list-label"
-  aria-describedby="mdc-dialog-with-list-description" as |dialog|}}
+  ariaLabelledby="mdc-dialog-with-list-label"
+  ariaDescribedby="mdc-dialog-with-list-description" as |dialog|}}
     <header class="mdc-dialog__header">
       <h2 id="mdc-dialog-with-list-label" class="mdc-dialog__header__title">
         Choose a Ringtone

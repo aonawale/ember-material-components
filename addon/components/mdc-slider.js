@@ -38,7 +38,7 @@ export default Component.extend({
 
     set(this, '_mdcComponent', slider);
 
-    this._updateState();
+    this._updateElement();
 
     slider.listen('MDCSlider:input', get(this, 'input'));
     slider.listen('MDCSlider:change', get(this, 'change'));
@@ -46,10 +46,10 @@ export default Component.extend({
 
   didUpdateAttrs() {
     this._super(...arguments);
-    this._updateState();
+    this._updateElement();
   },
 
-  _updateState() {
+  _updateElement() {
     let slider = get(this, '_mdcComponent');
     slider.min = get(this, 'min');
     slider.max = get(this, 'max');

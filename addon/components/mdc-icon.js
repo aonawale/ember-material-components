@@ -5,9 +5,15 @@ export default Component.extend({
   layout,
   icon: null,
   tagName: 'i',
-  'aria-hidden': null,
+  tabindex: null,
+  ariaHidden: null,
+  ariaLabel: null,
   classNames: ['material-icons'],
-  attributeBindings: ['aria-hidden']
+  attributeBindings: [
+    'tabindex',
+    'ariaHidden:aria-hidden',
+    'ariaLabel:aria-label'
+  ]
 }).reopenClass({
   positionalParams: ['icon']
 });

@@ -25,12 +25,15 @@ export default Component.extend({
     this._super(...arguments);
     let linearProgress = new mdc.linearProgress.MDCLinearProgress(get(this, 'element'));
     set(this, '_mdcComponent', linearProgress);
-    linearProgress.buffer = get(this, 'buffer');
-    linearProgress.progress = get(this, 'progress');
+    this._updateElement();
   },
 
   didUpdateAttrs() {
     this._super(...arguments);
+    this._updateElement();
+  },
+
+  _updateElement() {
     let linearProgress = get(this, '_mdcComponent');
     linearProgress.buffer = get(this, 'buffer');
     linearProgress.progress = get(this, 'progress');

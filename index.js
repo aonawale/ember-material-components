@@ -26,6 +26,8 @@ module.exports = {
     app.import(`${nodeModules}/@material/menu/dist/mdc.menu.js`);
     app.import(`${nodeModules}/@material/radio/dist/mdc.radio.js`);
     app.import(`${nodeModules}/@material/slider/dist/mdc.slider.js`);
+    app.import(`${nodeModules}/@material/textfield/dist/mdc.textfield.js`);
+    app.import(`${nodeModules}/@material/tabs/dist/mdc.tabs.js`);
   },
 
   treeForStyles: function treeForStyles(tree) {

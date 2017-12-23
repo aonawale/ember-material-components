@@ -5,6 +5,7 @@ import layout from '../templates/components/mdc-temporary-drawer';
 export default Component.extend({
   layout,
   isOpened: true,
+  hasSpacer: false,
   tagName: 'aside',
   classNames: ['mdc-temporary-drawer', 'mdc-typography'],
 

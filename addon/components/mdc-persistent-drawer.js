@@ -5,6 +5,7 @@ import layout from '../templates/components/mdc-persistent-drawer';
 export default Component.extend({
   layout,
   isOpened: true,
+  hasSpacer: true,
   tagName: 'aside',
   classNames: ['mdc-persistent-drawer', 'mdc-typography'],
 
@@ -15,7 +16,7 @@ export default Component.extend({
     let drawer = new mdc.drawer.MDCPersistentDrawer(get(this, 'element'));
     set(this, '_mdcComponent', drawer);
 
-    this._updateState();
+    this._updateElement();
 
     drawer.listen('MDCPersistentDrawer:open', get(this, 'open'));
     drawer.listen('MDCPersistentDrawer:close', get(this, 'close'));
@@ -23,7 +24,7 @@ export default Component.extend({
 
   didUpdateAttrs() {
     this._super(...arguments);
-    this._updateState();
+    this._updateElement();
   },
 
   willDestroyElement() {
@@ -31,7 +32,7 @@ export default Component.extend({
     get(this, '_mdcComponent').destroy();
   },
 
-  _updateState() {
+  _updateElement() {
     let drawer = get(this, '_mdcComponent');
     drawer.open = !!get(this, 'isOpened');
   },

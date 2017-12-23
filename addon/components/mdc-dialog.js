@@ -6,12 +6,16 @@ import layout from '../templates/components/mdc-dialog';
 export default Component.extend({
   layout,
   role: null,
-  'aria-labelledby': null,
-  'aria-describedby': null,
+  ariaLabelledby: null,
+  ariaDescribedby: null,
   isShowing: true,
   tagName: 'aside',
   classNames: ['mdc-dialog'],
-  attributeBindings: ['role', 'aria-labelledby', 'aria-describedby'],
+  attributeBindings: [
+    'role',
+    'ariaLabelledby:aria-labelledby',
+    'ariaDescribedby:aria-describedby'
+  ],
 
   _mdcComponent: null,
 

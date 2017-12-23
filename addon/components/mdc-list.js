@@ -5,7 +5,7 @@ export default Component.extend({
   layout,
   tagName: 'ul',
   role: null,
-  'aria-hidden': null,
+  ariaHidden: null,
   isDense: false,
   isInteractive: true,
   isAvaterList: false,
@@ -17,5 +17,5 @@ export default Component.extend({
     'isTwoLineListItem:mdc-list--two-line',
     'isAvaterList:mdc-list--avatar-list'
   ],
-  attributeBindings: ['role', 'aria-hidden']
+  attributeBindings: ['role', 'ariaHidden:aria-hidden']
 });

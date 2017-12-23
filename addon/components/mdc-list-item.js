@@ -7,7 +7,8 @@ export default Component.extend(Ripple, {
   tagName: 'li',
   role: null,
   tabindex: null,
-  'aria-disabled': null,
+  isDisabled: false,
+  ariaDisabled: false,
   hasRipples: false,
   isSelected: false,
   isActivated: false,
@@ -16,5 +17,10 @@ export default Component.extend(Ripple, {
     'isSelected:mdc-list-item--selected',
     'isActivated:mdc-list-item--activated'
   ],
-  attributeBindings: ['role', 'tabindex', 'aria-disabled']
+  attributeBindings: [
+    'role',
+    'tabindex',
+    'isDisabled:aria-disabled',
+    'ariaDisabled:aria-disabled'
+  ]
 });

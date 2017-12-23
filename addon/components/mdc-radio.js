@@ -26,15 +26,15 @@ export default Component.extend({
     let radio = new mdc.radio.MDCRadio(get(this, 'element'));
 
     set(this, '_mdcComponent', radio);
-    this._updateState();
+    this._updateElement();
   },
 
   didUpdateAttrs() {
     this._super(...arguments);
-    this._updateState();
+    this._updateElement();
   },
 
-  _updateState() {
+  _updateElement() {
     let radio = get(this, '_mdcComponent');
     radio.value = get(this, 'value');
     radio.checked = !!get(this, 'isChecked');

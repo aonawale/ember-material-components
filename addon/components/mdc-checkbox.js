@@ -5,10 +5,10 @@ import layout from '../templates/components/mdc-checkbox';
 
 export default Component.extend({
   layout,
-  checked: false,
-  disabled: false,
+  isChecked: false,
+  isDisabled: false,
   classNames: ['mdc-checkbox'],
-  classNameBindings: ['disabled:mdc-checkbox--disabled'],
+  classNameBindings: ['isDisabled:mdc-checkbox--disabled'],
 
   checkboxId: computed(function() {
     return `mdc-checkbox-${guidFor(this)}`;
