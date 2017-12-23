@@ -41,6 +41,7 @@
     "@material/switch": "^0.27.0",
     "@material/tabs": "^0.27.0",
     "@material/textfield": "^0.27.0",
+    "@material/theme": "^0.27.0",
     "@material/toolbar": "^0.27.0",
     "@material/typography": "^0.3.0",
     "ember-cli-babel": "^6.6.0",

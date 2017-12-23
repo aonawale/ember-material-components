@@ -199,14 +199,15 @@
   {{mdc-snackbar
     isShowing=showSnack
     hidegg=(action (mut showSnack) false)
-    message="This means sending anonymous location data to Google"}}</p>
+    message="This means sending anonymous location data to Google"}}
+</p>
 
-<p>{{mdc-linear-progress isReversed=true isIndeterminate=true}}</p>
-
-<p>{{mdc-linear-progress isIndeterminate=true}}</p>
-
-<p>{{mdc-linear-progress progress=0.7}}</p>
-<p>{{mdc-linear-progress progress=0.3 buffer=0.5}}</p>
+<p class="mdc-elevation--z16 mdc-elevation-transition">
+  <p>{{mdc-linear-progress isReversed=true isIndeterminate=true}}</p>
+  <p>{{mdc-linear-progress isIndeterminate=true}}</p>
+  <p>{{mdc-linear-progress progress=0.7}}</p>
+  <p>{{mdc-linear-progress progress=0.3 buffer=0.5}}</p>
+</p>
 
 {{#mdc-dialog
   isShowing=showModal
@@ -300,17 +301,3 @@
     Bluetooth
   {{/list.item}}
 {{/mdc-list}}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
