@@ -11,6 +11,27 @@
 {{mdc-button text="Disabled" isDisabled=true}}
 
 <p>
+  {{#mdc-grid-list as |grid-list|}}
+    {{#grid-list.tile}}
+      <div class="mdc-grid-tile__primary">
+        <img class="mdc-grid-tile__primary-content" src="http://via.placeholder.com/150x150" />
+      </div>
+      <span class="mdc-grid-tile__secondary">
+        <span class="mdc-grid-tile__title">Title</span>
+      </span>
+    {{/grid-list.tile}}
+    {{#grid-list.tile}}
+      <div class="mdc-grid-tile__primary">
+        <img class="mdc-grid-tile__primary-content" src="http://via.placeholder.com/150x150" />
+      </div>
+      <span class="mdc-grid-tile__secondary">
+        <span class="mdc-grid-tile__title">Title</span>
+      </span>
+    {{/grid-list.tile}}
+  {{/mdc-grid-list}}
+</p>
+
+<p>
   {{#mdc-form-field}}
   {{mdc-checkbox inputId="input1234"}}
     <label for="input1234">Input Label</label>

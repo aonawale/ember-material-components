@@ -30,6 +30,7 @@ module.exports = {
     app.import(`${nodeModules}/@material/tabs/dist/mdc.tabs.js`);
     app.import(`${nodeModules}/@material/select/dist/mdc.select.js`);
     app.import(`${nodeModules}/@material/form-field/dist/mdc.formField.js`);
+    app.import(`${nodeModules}/@material/grid-list/dist/mdc.gridList.js`);
   },
 
   treeForStyles: function treeForStyles(tree) {
