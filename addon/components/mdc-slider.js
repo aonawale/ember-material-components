@@ -1,9 +1,10 @@
-import Component from '@ember/component';
-import { get, set } from '@ember/object';
+import MDCBase from './-mdc-base';
+import { get } from '@ember/object';
 import layout from '../templates/components/mdc-slider';
 
-export default Component.extend({
+export default MDCBase.extend({
   layout,
+  mdcClass: mdc.slider.MDCSlider,
   role: 'slider',
   tabindex: 0,
   label: null,
@@ -32,34 +33,16 @@ export default Component.extend({
     'isDisabled:aria-disabled'
   ],
 
-  didInsertElement() {
-    this._super(...arguments);
-    let slider = new mdc.slider.MDCSlider(get(this, 'element'));
-
-    set(this, '_mdcComponent', slider);
-
-    this._updateElement();
-
-    slider.listen('MDCSlider:input', get(this, 'input'));
-    slider.listen('MDCSlider:change', get(this, 'change'));
+  bindListeners(mdcComponent) {
+    mdcComponent.listen('MDCSlider:input', get(this, 'input'));
+    mdcComponent.listen('MDCSlider:change', get(this, 'change'));
   },
 
-  didUpdateAttrs() {
-    this._super(...arguments);
-    this._updateElement();
-  },
-
-  _updateElement() {
-    let slider = get(this, '_mdcComponent');
-    slider.min = get(this, 'min');
-    slider.max = get(this, 'max');
-    slider.value = get(this, 'value');
-    slider.disabled = !!get(this, 'isDisabled');
-  },
-
-  willDestroyElement() {
-    this._super(...arguments);
-    get(this, '_mdcComponent').destroy();
+  updateElement(mdcComponent) {
+    mdcComponent.min = get(this, 'min');
+    mdcComponent.max = get(this, 'max');
+    mdcComponent.value = get(this, 'value');
+    mdcComponent.disabled = !!get(this, 'isDisabled');
   },
 
   input() {},

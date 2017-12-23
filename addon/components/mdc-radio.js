@@ -1,10 +1,11 @@
-import Component from '@ember/component';
-import { get, set, computed } from '@ember/object';
+import MDCBase from './-mdc-base';
+import { get, computed } from '@ember/object';
 import { guidFor } from '@ember/object/internals';
 import layout from '../templates/components/mdc-radio';
 
-export default Component.extend({
+export default MDCBase.extend({
   layout,
+  mdcClass: mdc.radio.MDCRadio,
   name: null,
   value: null,
   isChecked: false,
@@ -21,28 +22,9 @@ export default Component.extend({
     return `mdc-radio-${guidFor(this)}`;
   }),
 
-  didInsertElement() {
-    this._super(...arguments);
-    let radio = new mdc.radio.MDCRadio(get(this, 'element'));
-
-    set(this, '_mdcComponent', radio);
-    this._updateElement();
-  },
-
-  didUpdateAttrs() {
-    this._super(...arguments);
-    this._updateElement();
-  },
-
-  _updateElement() {
-    let radio = get(this, '_mdcComponent');
-    radio.value = get(this, 'value');
-    radio.checked = !!get(this, 'isChecked');
-    radio.disabled = !!get(this, 'isDisabled');
-  },
-
-  willDestroyElement() {
-    this._super(...arguments);
-    get(this, '_mdcComponent').destroy();
+  updateElement(mdcComponent) {
+    mdcComponent.value = get(this, 'value');
+    mdcComponent.checked = !!get(this, 'isChecked');
+    mdcComponent.disabled = !!get(this, 'isDisabled');
   }
 });

@@ -1,9 +1,10 @@
-import Component from '@ember/component';
-import { get, set } from '@ember/object';
+import MDCBase from './-mdc-base';
+import { get } from '@ember/object';
 import layout from '../templates/components/mdc-linear-progress';
 
-export default Component.extend({
+export default MDCBase.extend({
   layout,
+  mdcClass: mdc.linearProgress.MDCLinearProgress,
   role: 'progressbar',
   buffer: 0,
   progress: 0,
@@ -21,26 +22,8 @@ export default Component.extend({
   ],
   attributeBindings: ['role'],
 
-  didInsertElement() {
-    this._super(...arguments);
-    let linearProgress = new mdc.linearProgress.MDCLinearProgress(get(this, 'element'));
-    set(this, '_mdcComponent', linearProgress);
-    this._updateElement();
-  },
-
-  didUpdateAttrs() {
-    this._super(...arguments);
-    this._updateElement();
-  },
-
-  _updateElement() {
-    let linearProgress = get(this, '_mdcComponent');
-    linearProgress.buffer = get(this, 'buffer');
-    linearProgress.progress = get(this, 'progress');
-  },
-
-  willDestroyElement() {
-    this._super(...arguments);
-    get(this, '_mdcComponent').destroy();
-  },
+  updateElement(mdcComponent) {
+    mdcComponent.buffer = get(this, 'buffer');
+    mdcComponent.progress = get(this, 'progress');
+  }
 });

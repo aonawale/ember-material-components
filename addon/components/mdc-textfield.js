@@ -1,11 +1,12 @@
-import Component from '@ember/component';
-import { get, set, computed } from '@ember/object';
+import MDCBase from './-mdc-base';
+import { get, computed } from '@ember/object';
 import { bool, not, and } from '@ember/object/computed';
 import { guidFor } from '@ember/object/internals';
 import layout from '../templates/components/mdc-textfield';
 
-export default Component.extend({
+export default MDCBase.extend({
   layout,
+  mdcClass: mdc.textfield.MDCTextField,
   icon: null,
   trailingIcon: null,
   label: null,
@@ -45,24 +46,7 @@ export default Component.extend({
     return `mdc-switch-${guidFor(this)}`;
   }),
 
-  didInsertElement() {
-    this._super(...arguments);
-    let textfield = new mdc.textfield.MDCTextField(get(this, 'element'));
-    set(this, '_mdcComponent', textfield);
-    this._updateElement();
-  },
-
-  didUpdateAttrs() {
-    this._super(...arguments);
-    this._updateElement();
-  },
-
-  willDestroyElement() {
-    this._super(...arguments);
-    get(this, '_mdcComponent').destroy();
-  },
-
-  _updateElement() {
+  updateElement() {
     let textfield = get(this, '_mdcComponent');
     textfield.valid = get(this, 'isValid');
     textfield.disabled = get(this, 'isDisabled');

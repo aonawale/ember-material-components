@@ -1,9 +1,10 @@
-import Component from '@ember/component';
-import { get, set } from '@ember/object';
+import MDCBase from './-mdc-base';
+import { get } from '@ember/object';
 import layout from '../templates/components/mdc-temporary-drawer';
 
-export default Component.extend({
+export default MDCBase.extend({
   layout,
+  mdcClass: mdc.drawer.MDCTemporaryDrawer,
   isOpened: true,
   hasSpacer: false,
   tagName: 'aside',
@@ -11,30 +12,13 @@ export default Component.extend({
 
   _mdcComponent: null,
 
-  didInsertElement() {
-    this._super(...arguments);
-    let drawer = new mdc.drawer.MDCTemporaryDrawer(get(this, 'element'));
-    set(this, '_mdcComponent', drawer);
-
-    this._updateState();
-
-    drawer.listen('MDCTemporaryDrawer:open', get(this, 'open'));
-    drawer.listen('MDCTemporaryDrawer:close', get(this, 'close'));
+  bindListeners(mdcComponent) {
+    mdcComponent.listen('MDCTemporaryDrawer:open', get(this, 'open'));
+    mdcComponent.listen('MDCTemporaryDrawer:close', get(this, 'close'));
   },
 
-  didUpdateAttrs() {
-    this._super(...arguments);
-    this._updateState();
-  },
-
-  willDestroyElement() {
-    this._super(...arguments);
-    get(this, '_mdcComponent').destroy();
-  },
-
-  _updateState() {
-    let drawer = get(this, '_mdcComponent');
-    drawer.open = !!get(this, 'isOpened');
+  updateElement(mdcComponent) {
+    mdcComponent.open = !!get(this, 'isOpened');
   },
 
   open() {},

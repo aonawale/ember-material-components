@@ -1,9 +1,10 @@
-import Component from '@ember/component';
+import MDCBase from './-mdc-base';
 import layout from '../templates/components/mdc-snackbar';
-import { get, set, getProperties, computed } from '@ember/object';
+import { get, getProperties, computed } from '@ember/object';
 
-export default Component.extend({
+export default MDCBase.extend({
   layout,
+  mdcClass: mdc.snackbar.MDCSnackbar,
   message: null,
   timeout: 2750,
   isShowing: true,
@@ -35,17 +36,11 @@ export default Component.extend({
 
   didInsertElement() {
     this._super(...arguments);
-    let snackbar = new mdc.snackbar.MDCSnackbar(get(this, 'element'));
-    snackbar.dismissesOnAction = get(this, 'dismissesOnAction');
-
-    snackbar.listen('MDCSnackbar:show', get(this, 'show'));
-    snackbar.listen('MDCSnackbar:hide', get(this, 'hide'));
+    let snackbar = get(this, '_mdcComponent');
 
     if (get(this, 'isShowing')) {
       snackbar.show(get(this, 'dataObj'));
     }
-
-    set(this, '_mdcComponent', snackbar);
   },
 
   didUpdateAttrs() {
@@ -57,9 +52,13 @@ export default Component.extend({
     }
   },
 
-  willDestroyElement() {
-    this._super(...arguments);
-    get(this, '_mdcComponent').destroy();
+  updateElement(mdcComponent) {
+    mdcComponent.dismissesOnAction = get(this, 'dismissesOnAction');
+  },
+
+  bindListeners(mdcComponent) {
+    mdcComponent.listen('MDCSnackbar:show', get(this, 'show'));
+    mdcComponent.listen('MDCSnackbar:hide', get(this, 'hide'));
   },
 
   show() {},

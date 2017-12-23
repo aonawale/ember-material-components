@@ -9,6 +9,7 @@ export default Component.extend(Ripple, {
   icon: null,
   tagName: 'button',
   isDense: false,
+  isDisabled: false,
   isRaised: false,
   isCompact: false,
   isStroked: false,
@@ -21,7 +22,7 @@ export default Component.extend(Ripple, {
     'isStroked:mdc-button--stroked',
     'isUnelevated:mdc-button--unelevated'
   ],
-  attributeBindings: ['disabled', 'for'],
+  attributeBindings: ['isDisabled:disabled', 'for'],
 
   _mdcComponent: null,
 

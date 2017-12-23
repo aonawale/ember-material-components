@@ -13,6 +13,7 @@ export default Component.extend({
       let mdcComponent = new MDCClass(get(this, 'element'));
       set(this, '_mdcComponent', mdcComponent);
       this.updateElement(mdcComponent);
+      this.bindListeners(mdcComponent);
     }
   },
 
@@ -28,5 +29,6 @@ export default Component.extend({
     mdcComponent && mdcComponent.destroy();
   },
 
-  updateElement(/* mdcComponent */) { }
+  updateElement(/* mdcComponent */) { },
+  bindListeners(/* mdcComponent */) { }
 });

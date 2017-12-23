@@ -8,9 +8,9 @@
 {{/mdc-toolbar}}
 
 <div class="content">
-  {{#mdc-permanent-drawer isOpened=drawerOpen close=(action (mut drawerOpen) false) as |drawer|}}
-    <header class="mdc-permanent-drawer__header">
-      <div class="mdc-permanent-drawer__header-content">
+  {{#mdc-temporary-drawer isOpened=drawerOpen close=(action (mut drawerOpen) false) as |drawer|}}
+    <header class="mdc-temporary-drawer__header">
+      <div class="mdc-temporary-drawer__header-content">
         Header here
       </div>
     </header>
@@ -22,7 +22,7 @@
         {{mdc-icon "star" class="mdc-list-item__graphic mdc-list-item__start-detail" ariaHidden="true"}}Star
       {{/list.item}}
     {{/drawer.list}}
-  {{/mdc-permanent-drawer}}
+  {{/mdc-temporary-drawer}}
   <main id="main-page" class="mdc-toolbar-fixed-adjust">
     <p>{{outlet}}</p>
   </main>

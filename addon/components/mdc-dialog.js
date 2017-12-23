@@ -1,10 +1,11 @@
-import Component from '@ember/component';
-import { get, set } from '@ember/object';
+import MDCBase from './-mdc-base';
+import { get } from '@ember/object';
 import { reads } from '@ember/object/computed';
 import layout from '../templates/components/mdc-dialog';
 
-export default Component.extend({
+export default MDCBase.extend({
   layout,
+  mdcClass: mdc.dialog.MDCDialog,
   role: null,
   ariaLabelledby: null,
   ariaDescribedby: null,
@@ -17,15 +18,10 @@ export default Component.extend({
     'ariaDescribedby:aria-describedby'
   ],
 
-  _mdcComponent: null,
-
   didInsertElement() {
     this._super(...arguments);
-    let dialog = new mdc.dialog.MDCDialog(get(this, 'element'));
-    set(this, '_mdcComponent', dialog);
-
     if (get(this, 'isShowing')) {
-      dialog.show();
+      get(this, '_mdcComponent').show();
     }
   },
 
@@ -38,11 +34,6 @@ export default Component.extend({
     } else {
       dialog.close();
     }
-  },
-
-  willDestroyElement() {
-    this._super(...arguments);
-    get(this, '_mdcComponent').destroy();
   },
 
   accept() {},

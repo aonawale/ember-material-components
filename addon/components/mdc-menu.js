@@ -1,17 +1,16 @@
-import Component from '@ember/component';
-import { get, set } from '@ember/object';
+import MDCBase from './-mdc-base';
+import { get } from '@ember/object';
 import layout from '../templates/components/mdc-menu';
 
-export default Component.extend({
+export default MDCBase.extend({
   layout,
+  mdcClass: mdc.menu.MDCSimpleMenu,
   tabindex: '-1',
   isOpened: false,
   isOpenedFromTopLeft: false,
   isOpenedFromTopRight: false,
   isOpenedFromBottomLeft: false,
   isOpenedFromBottomRight: false,
-
-  _mdcComponent: null,
 
   classNames: ['mdc-simple-menu'],
   classNameBindings: [
@@ -22,25 +21,13 @@ export default Component.extend({
   ],
   attributeBindings: ['tabindex'],
 
-  didInsertElement() {
-    this._super(...arguments);
-    let menu = new mdc.menu.MDCSimpleMenu(get(this, 'element'));
-    menu.open = !!get(this, 'isOpened');
-    set(this, '_mdcComponent', menu);
-
-    menu.listen('MDCSimpleMenu:cancel', get(this, 'cancel'));
-    menu.listen('MDCSimpleMenu:selected', get(this, 'select'));
+  bindListeners(mdcComponent) {
+    mdcComponent.listen('MDCSimpleMenu:cancel', get(this, 'cancel'));
+    mdcComponent.listen('MDCSimpleMenu:selected', get(this, 'select'));
   },
 
-  didUpdateAttrs() {
-    this._super(...arguments);
-    let menu = get(this, '_mdcComponent');
-    menu.open = !!get(this, 'isOpened');
-  },
-
-  willDestroyElement() {
-    this._super(...arguments);
-    get(this, '_mdcComponent').destroy();
+  updateElement(mdcComponent) {
+    mdcComponent.open = !!get(this, 'isOpened');
   },
 
   cancel() {},
