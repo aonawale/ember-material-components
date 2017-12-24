@@ -1,0 +1,33 @@
+<section class="demo">
+  <h1 class="mdc-typography--title">Basic Card</h1>
+  {{#mdc-card title="Title goes here" subtitle="Subtitle here" as |card|}}
+    <section class="mdc-card__supporting-text">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat.
+    </section>
+    <section class="mdc-card__actions">
+      {{card.action text="Action 1"}}
+      {{card.action text="Action 2"}}
+    </section>
+  {{/mdc-card}}
+  <div>{{code-snippet name="mdc-card.hbs"}}</div>
+</section>
+
+<section class="demo">
+  <h1 class="mdc-typography--title">Small Title Card</h1>
+  {{#mdc-card title="Title goes here" subtitle="Subtitle here" isLargeTitle=false as |card|}}
+    <section class="mdc-card__supporting-text">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat.
+    </section>
+    <section class="mdc-card__actions">
+      {{card.action text="Action 1"}}
+      {{card.action text="Action 2"}}
+    </section>
+  {{/mdc-card}}
+  <div>{{code-snippet name="mdc-card__small-title.hbs"}}</div>
+</section>

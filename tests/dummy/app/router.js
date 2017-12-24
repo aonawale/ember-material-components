@@ -7,6 +7,24 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+  this.route('button');
+  this.route('card');
+  this.route('checkbox');
+  this.route('select');
+  this.route('tabs');
+  this.route('list');
+  this.route('radio');
+  this.route('slider');
+  this.route('linear-progress');
+  this.route('textfield');
+  this.route('form-field');
+  this.route('snackbar');
+  this.route('dialog');
+  this.route('menu');
+  this.route('fab');
+  this.route('icon-toggle');
+  this.route('grid-list');
+  this.route('drawer');
 });
 
 export default Router;

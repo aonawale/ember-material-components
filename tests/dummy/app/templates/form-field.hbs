@@ -1,0 +1,13 @@
+<p>
+  {{#mdc-form-field}}
+  {{mdc-checkbox inputId="input1234"}}
+    <label for="input1234">Input Label</label>
+  {{/mdc-form-field}}
+</p>
+
+<p>
+  {{#mdc-form-field input=mdcRadio class="mdc-form-field--align-end"}}
+    {{mdc-radio inputId="input2334" initialize=(action (mut mdcRadio))}}
+    <label for="input2334">Input Label</label>
+  {{/mdc-form-field}}
+</p>

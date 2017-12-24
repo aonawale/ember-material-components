@@ -5,5 +5,6 @@ export default Component.extend({
   layout,
   title: null,
   subtitle: null,
+  isLargeTitle: true,
   classNames: ['mdc-card']
 });

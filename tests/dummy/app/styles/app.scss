@@ -1,13 +1,18 @@
 @import "ember-material-components";
 
+.demo {
+  margin: 16px 0;
+}
+
+#main-container {
+  display: flex;
+}
+
 #main-page {
-  min-height: 1200px;
-  position: absolute;
-  right: 0;
-  left: 260px;
-  top: 0;
-  bottom: 0;
-  width: 80%;
+  padding: 16px;
+  width: -webkit-calc(100% - 240px);
+  width: -moz-calc(100% - 240px);
+  width: calc(100% - 240px);
 }
 
 .app-fab--absolute {
@@ -17,7 +22,7 @@
 }
 
 @media(min-width: 1024px) {
-   .app-fab--absolute {
+  .app-fab--absolute {
     bottom: 1.5rem;
     right: 1.5rem;
   }

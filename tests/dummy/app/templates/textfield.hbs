@@ -1,0 +1,21 @@
+<p>
+  {{mdc-textfield label="First Name"}}
+  <p class="mdc-text-field-helper-text" aria-hidden="true">
+    This will be displayed on your public profile
+  </p>
+  {{mdc-textfield label="Last Name" value="Ayo" ariaControls="username-helper-text"}}
+  <p id="username-helper-text" class="mdc-text-field-helper-text" aria-hidden="true">
+    This will be displayed on your public profile
+  </p>
+  {{mdc-textfield label="Email" isRequired=true}}
+  {{mdc-textfield placeholder="Full-Width Text Field" isFullWidth=true}}
+  {{mdc-textfield label="Outlined" isOutlined=true}}
+  {{mdc-textfield label="Disabled" isDisabled=true}}
+  {{mdc-textfield label="Your Name" icon="event"}}
+  {{mdc-textfield label="Your Name" icon="event" isTrailingIcon=true iconTabindex=null}}
+</p>
+
+<p>
+  {{mdc-textarea label="First Name"}}
+  {{mdc-textarea label="First Name" isFullWidth=true}}
+</p>

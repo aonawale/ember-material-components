@@ -1,29 +1,36 @@
 {{#mdc-toolbar isFixed=true contentSelector="#main-page" as |toolbar|}}
   <div class="mdc-toolbar__row">
     <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
-      <a {{action (mut drawerOpen) true}}>{{toolbar.menu}}</a>
-      <span class="mdc-toolbar__title">Title</span>
+      <a {{action (mut drawerOpened) true}}>{{toolbar.menu}}</a>
+      {{link-to "Ember Material Components" "index" class="mdc-toolbar__title"}}
     </section>
   </div>
 {{/mdc-toolbar}}
 
-<div class="content">
-  {{#mdc-temporary-drawer isOpened=drawerOpen close=(action (mut drawerOpen) false) as |drawer|}}
-    <header class="mdc-temporary-drawer__header">
-      <div class="mdc-temporary-drawer__header-content">
-        Header here
-      </div>
-    </header>
-    {{#drawer.list as |list|}}
-      {{#list.item isActivated=true hasRipples=true}}
-        {{mdc-icon "inbox" class="mdc-list-item__graphic mdc-list-item__start-detail" ariaHidden="true"}}Inbox
-      {{/list.item}}
-      {{#list.item hasRipples=true}}
-        {{mdc-icon "star" class="mdc-list-item__graphic mdc-list-item__start-detail" ariaHidden="true"}}Star
-      {{/list.item}}
+<div id="main-container">
+  {{#mdc-permanent-drawer isOpened=drawerOpened close=(action (mut drawerOpened) false) as |drawer|}}
+    {{#drawer.list isTwoLineListItem=true as |list|}}
+      {{navbar-item icon="add_circle_outline" route="button" title="Button"}}
+      {{navbar-item icon="border_all" route="card" title="Card"}}
+      {{navbar-item icon="check_box" route="checkbox" title="Checkbox"}}
+      {{navbar-item icon="check_box_outline_blank" route="dialog" title="Dialog"}}
+      {{navbar-item icon="view_column" route="drawer" title="Drawer"}}
+      {{navbar-item icon="text_fields" route="form-field" title="Form field"}}
+      {{navbar-item icon="add_circle" route="fab" title="Floating action button"}}
+      {{navbar-item icon="grid_on" route="grid-list" title="Grid list"}}
+      {{navbar-item icon="radio_button_checked" route="icon-toggle" title="Icon toggle"}}
+      {{navbar-item icon="line_style" route="linear-progress" title="Linear progress"}}
+      {{navbar-item icon="list" route="list" title="List"}}
+      {{navbar-item icon="menu" route="menu" title="Menu"}}
+      {{navbar-item icon="radio_button_unchecked" route="radio" title="Radio buttons"}}
+      {{navbar-item icon="select_all" route="select" title="Select"}}
+      {{navbar-item icon="linear_scale" route="slider" title="Slider"}}
+      {{navbar-item icon="chat_bubble_outline" route="snackbar" title="Snackbar"}}
+      {{navbar-item icon="tab_unselected" route="tabs" title="Tabs"}}
+      {{navbar-item icon="text_format" route="textfield" title="Textfield"}}
     {{/drawer.list}}
-  {{/mdc-temporary-drawer}}
+  {{/mdc-permanent-drawer}}
   <main id="main-page" class="mdc-toolbar-fixed-adjust">
-    <p>{{outlet}}</p>
+    {{outlet}}
   </main>
 </div>

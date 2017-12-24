@@ -1,0 +1,9 @@
+<div class="mdc-menu-anchor">
+  {{mdc-checkbox toggle=(action (mut showMenu) true) checked=showMenu}}Open Menu
+  {{#mdc-menu isOpened=showMenu cancel=(action (mut showMenu) false) select=(action (mut showMenu) false) as |menu|}}
+    {{#menu.list role="menu" ariaHidden="true" as |list|}}
+      {{#list.item role="menuitem"}}A Menu Item{{/list.item}}
+      {{#list.item role="menuitem" isDisabled="true"}}Another Menu Item{{/list.item}}
+    {{/menu.list}}
+  {{/mdc-menu}}
+</div>

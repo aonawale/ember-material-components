@@ -1,0 +1,10 @@
+{{#mdc-permanent-drawer isOpened=drawerOpened close=(action (mut drawerOpened) false) as |drawer|}}
+  {{#drawer.list isTwoLineListItem=true as |list|}}
+    {{#list.item}}
+      <span class="mdc-list-item__text">Inbox</span>
+    {{/list.item}}
+    {{#list.item}}
+      <span class="mdc-list-item__text">Star</span>
+    {{/list.item}}
+  {{/drawer.list}}
+{{/mdc-permanent-drawer}}

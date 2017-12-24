@@ -1,0 +1,40 @@
+{{#mdc-list isAvaterList=true as |list|}}
+  {{#list.item}}
+    <span class="mdc-list-item__start-detail">
+      <img class="mdc-list-item__graphic" src="http://via.placeholder.com/30x30">
+    </span>
+    Janet Perkins
+  {{/list.item}}
+  {{#list.item}}
+    <span class="mdc-list-item__start-detail">
+      <img class="mdc-list-item__graphic" src="http://via.placeholder.com/30x30">
+    </span>
+    Mary Johnson
+  {{/list.item}}
+{{/mdc-list}}
+
+{{#mdc-list isTwoLineListItem=true as |list|}}
+  {{#list.item}}
+    <span class="mdc-list-item__text">
+      Two-line item
+      <span class="mdc-list-item__secondary-text">Secondary text</span>
+    </span>
+  {{/list.item}}
+  {{#list.item}}
+    <span class="mdc-list-item__text">
+      Two-line item
+      <span class="mdc-list-item__secondary-text">Secondary text</span>
+    </span>
+  {{/list.item}}
+{{/mdc-list}}
+
+{{#mdc-list as |list|}}
+  {{#list.item}}
+    <i class="mdc-list-item__graphic material-icons mdc-list-item__start-detail" aria-hidden="true">network_wifi</i>
+    Wi-Fi
+  {{/list.item}}
+  {{#list.item}}
+    <i class="mdc-list-item__graphic material-icons mdc-list-item__start-detail" aria-hidden="true">bluetooth</i>
+    Bluetooth
+  {{/list.item}}
+{{/mdc-list}}

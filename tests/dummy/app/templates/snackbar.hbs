@@ -1,0 +1,5 @@
+{{mdc-button text="Show" click=(action (mut showSnack) true)}}
+{{mdc-snackbar
+  isShowing=showSnack
+  hidegg=(action (mut showSnack) false)
+  message="This means sending anonymous location data to Google"}}
