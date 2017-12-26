@@ -6,7 +6,6 @@ export default MDCBase.extend({
   layout,
   mdcClass: mdc.drawer.MDCPersistentDrawer,
   isOpened: true,
-  hasSpacer: true,
   tagName: 'aside',
   classNames: ['mdc-persistent-drawer', 'mdc-typography'],
 

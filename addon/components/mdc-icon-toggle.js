@@ -10,7 +10,6 @@ export default MDCIcon.extend({
   offIcon: null,
   role: 'button',
   ariaLabel: false,
-  ariaDisabled: false,
   ariaPressed: false,
   tabindex: 0,
   isDisabled: false,
@@ -28,6 +27,10 @@ export default MDCIcon.extend({
     'dataToggleOn:data-toggle-on',
     'dataToggleOff:data-toggle-off'
   ],
+
+  ariaDisabled: computed('isDisabled', function() {
+    return get(this, 'isDisabled') ? 'true' : 'false';
+  }),
 
   dataToggleOn: computed('label', 'icon', 'cssClass', function() {
     return JSON.stringify({

@@ -6,11 +6,11 @@ export default MDCBase.extend({
   layout,
   mdcClass: mdc.linearProgress.MDCLinearProgress,
   role: 'progressbar',
-  buffer: 0,
+  buffer: null,
   progress: 0,
   isClosed: false,
   isReversed: false,
-  isIndeterminate: false,
+  isDeterminate: true,
 
   _mdcComponent: null,
 
@@ -18,12 +18,14 @@ export default MDCBase.extend({
   classNameBindings: [
     'isClosed:mdc-linear-progress--closed',
     'isReversed:mdc-linear-progress--reversed',
-    'isIndeterminate:mdc-linear-progress--indeterminate'
+    'isDeterminate::mdc-linear-progress--indeterminate'
   ],
   attributeBindings: ['role'],
 
   updateElement(mdcComponent) {
     mdcComponent.buffer = get(this, 'buffer');
     mdcComponent.progress = get(this, 'progress');
+    mdcComponent.determinate = get(this, 'isDeterminate');
+    mdcComponent.reverse = get(this, 'isReversed');
   }
 });

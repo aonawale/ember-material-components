@@ -1,13 +1,25 @@
-<p>
-  {{#mdc-form-field}}
-  {{mdc-checkbox inputId="input1234"}}
-    <label for="input1234">Input Label</label>
-  {{/mdc-form-field}}
-</p>
+<div class="demo">
+  <h1 class="mdc-typography--title">FormField</h1>
+  <section>
+    <div class="item">
+      {{#mdc-form-field}}
+        {{mdc-checkbox inputId="my-checkbox"}}
+        <label for="my-checkbox">Checkbox Label</label>
+      {{/mdc-form-field}}
+    </div>
+    <div class="item">{{code-snippet name="mdc-formfield__default.hbs"}}</div>
+  </section>
+</div>
 
-<p>
-  {{#mdc-form-field input=mdcRadio class="mdc-form-field--align-end"}}
-    {{mdc-radio inputId="input2334" initialize=(action (mut mdcRadio))}}
-    <label for="input2334">Input Label</label>
-  {{/mdc-form-field}}
-</p>
+<div class="demo">
+  <h1 class="mdc-typography--title">FormField Input</h1>
+  <section>
+    <div class="item">
+      {{#mdc-form-field input=mdcRadio isEndAligned=true}}
+        {{mdc-radio inputId="my-radio" initialize=(action (mut mdcRadio))}}
+        <label for="my-radio">Radio Label</label>
+      {{/mdc-form-field}}
+    </div>
+    <div class="item">{{code-snippet name="mdc-formfield__input.hbs"}}</div>
+  </section>
+</div>

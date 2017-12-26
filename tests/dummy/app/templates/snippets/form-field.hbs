@@ -1,0 +1,13 @@
+{{!-- BEGIN-SNIPPET mdc-formfield__default --}}
+{{#mdc-form-field}}
+  {{mdc-checkbox inputId="my-checkbox"}}
+  <label for="my-checkbox">Checkbox Label</label>
+{{/mdc-form-field}}
+{{!-- END-SNIPPET --}}
+
+{{!-- BEGIN-SNIPPET mdc-formfield__input --}}
+{{#mdc-form-field input=mdcRadio isEndAligned=true}}
+  {{mdc-radio inputId="my-radio" initialize=(action (mut mdcRadio))}}
+  <label for="my-radio">Radio Label</label>
+{{/mdc-form-field}}
+{{!-- END-SNIPPET --}}

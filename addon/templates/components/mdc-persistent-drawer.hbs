@@ -1,6 +1,3 @@
-{{#if hasSpacer}}
-  <div class="mdc-persistent-drawer__toolbar-spacer"></div>
-{{/if}}
 <nav class="mdc-persistent-drawer__drawer">
   {{yield (hash list=(component 'mdc-list' class='mdc-persistent-drawer__content' tagName='nav'))}}
 </nav>

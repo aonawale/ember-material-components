@@ -1,19 +1,4 @@
-<div class="demo">
-  <h1 class="mdc-typography--title">Default Dialog</h1>
-  <section>
-    <div class="item">{{mdc-button text="SHOW DIALOG" click=(action (mut isShowingDialog) true)}}</div>
-    <div class="item">{{code-snippet name="mdc-dialog__default.hbs"}}</div>
-  </section>
-</div>
-
-<div class="demo">
-  <h1 class="mdc-typography--title">Scrolling Dialog</h1>
-  <section>
-    <div class="item">{{mdc-button text="SHOW SCROLLING DIALOG" click=(action (mut isShowingScrollingDialog) true)}}</div>
-    <div class="item">{{code-snippet name="mdc-dialog__scrolling.hbs"}}</div>
-  </section>
-</div>
-
+{{!-- BEGIN-SNIPPET mdc-dialog__default --}}
 {{#mdc-dialog
   isShown=isShowingDialog
   id="my-mdc-dialog"
@@ -32,7 +17,9 @@
       {{dialog.footer-action text="Accept" click=(action (mut isShowingDialog) false)}}
     </footer>
 {{/mdc-dialog}}
+{{!-- END-SNIPPET --}}
 
+{{!-- BEGIN-SNIPPET mdc-dialog__scrolling --}}
 {{#mdc-dialog
   isShown=isShowingScrollingDialog
   id="mdc-dialog-with-list"
@@ -63,3 +50,4 @@
       {{dialog.footer-action text="Accept" click=(action (mut isShowingScrollingDialog) false)}}
     </footer>
 {{/mdc-dialog}}
+{{!-- END-SNIPPET --}}

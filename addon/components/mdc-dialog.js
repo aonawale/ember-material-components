@@ -6,10 +6,10 @@ import layout from '../templates/components/mdc-dialog';
 export default MDCBase.extend({
   layout,
   mdcClass: mdc.dialog.MDCDialog,
-  role: null,
+  role: 'alertdialog',
   ariaLabelledby: null,
   ariaDescribedby: null,
-  isShowing: true,
+  isShown: true,
   tagName: 'aside',
   classNames: ['mdc-dialog'],
   attributeBindings: [
@@ -20,7 +20,7 @@ export default MDCBase.extend({
 
   didInsertElement() {
     this._super(...arguments);
-    if (get(this, 'isShowing')) {
+    if (get(this, 'isShown')) {
       get(this, '_mdcComponent').show();
     }
   },
@@ -29,11 +29,16 @@ export default MDCBase.extend({
     this._super(...arguments);
     let dialog = get(this, '_mdcComponent');
 
-    if (get(this, 'isShowing')) {
+    if (get(this, 'isShown')) {
       dialog.show();
     } else {
       dialog.close();
     }
+  },
+
+  bindListeners(mdcComponent) {
+    mdcComponent.listen('MDCDialog:accept', get(this, 'accept'));
+    mdcComponent.listen('MDCDialog:cancel', get(this, 'cancel'));
   },
 
   accept() {},

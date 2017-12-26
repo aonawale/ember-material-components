@@ -1,10 +1,113 @@
-{{#mdc-permanent-drawer isOpened=drawerOpened close=(action (mut drawerOpened) false) as |drawer|}}
-  {{#drawer.list isTwoLineListItem=true as |list|}}
-    {{#list.item}}
-      <span class="mdc-list-item__text">Inbox</span>
-    {{/list.item}}
-    {{#list.item}}
-      <span class="mdc-list-item__text">Star</span>
-    {{/list.item}}
-  {{/drawer.list}}
-{{/mdc-permanent-drawer}}
+<div class="demo">
+  <h1 class="mdc-typography--title">Temporary Drawer</h1>
+  <section>
+    <div class="item">
+      {{mdc-button text="SHOW TEMPORARY DRAWER" click=(action (mut temporaryDrawerOpened) true)}}
+
+      {{#mdc-temporary-drawer isOpened=temporaryDrawerOpened close=(action (mut temporaryDrawerOpened) false) as |drawer|}}
+        <header class="mdc-temporary-drawer__header">
+          <div class="mdc-temporary-drawer__header-content mdc-theme--primary-bg mdc-theme--text-primary-on-primary">
+            Header here
+          </div>
+        </header>
+        {{#drawer.list as |list|}}
+          {{#list.item isActivated=true as |item|}}
+            {{item.icon "inbox"}}
+            <span class="mdc-list-item__text">Inbox</span>
+          {{/list.item}}
+          {{#list.item as |item|}}
+            {{item.icon "star"}}
+            <span class="mdc-list-item__text">Star</span>
+          {{/list.item}}
+        {{/drawer.list}}
+      {{/mdc-temporary-drawer}}
+    </div>
+    <div class="item">{{code-snippet name="mdc-drawer__temporary.hbs"}}</div>
+  </section>
+</div>
+
+<div class="demo">
+  <h1 class="mdc-typography--title">Persistent Drawer</h1>
+  <section>
+    {{#mdc-toolbar as |toolbar|}}
+      <div class="mdc-toolbar__row">
+        <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
+          <a {{action (toggle 'persistentDrawerOpened' this)}}>{{toolbar.menu}}</a>
+          <span class="mdc-toolbar__title">Persistent Drawer</span>
+        </section>
+      </div>
+    {{/mdc-toolbar}}
+
+    {{#mdc-persistent-drawer isOpened=persistentDrawerOpened as |drawer|}}
+      {{#drawer.list as |list|}}
+        {{#list.item isActivated=true as |item|}}
+          {{item.icon "inbox"}}
+          <span class="mdc-list-item__text">Inbox</span>
+        {{/list.item}}
+        {{#list.item as |item|}}
+          {{item.icon "star"}}
+          <span class="mdc-list-item__text">Star</span>
+        {{/list.item}}
+      {{/drawer.list}}
+    {{/mdc-persistent-drawer}}
+    <div class="item">{{code-snippet name="mdc-drawer__persistent.hbs"}}</div>
+  </section>
+</div>
+
+<div class="demo">
+  <h1 class="mdc-typography--title">Permanent Drawer Above Toolbar</h1>
+  <section>
+    {{#mdc-permanent-drawer as |drawer|}}
+      {{#drawer.list as |list|}}
+        {{#list.item isActivated=true as |item|}}
+          {{item.icon "inbox"}}
+          <span class="mdc-list-item__text">Inbox</span>
+        {{/list.item}}
+        {{#list.item as |item|}}
+          {{item.icon "star"}}
+          <span class="mdc-list-item__text">Star</span>
+        {{/list.item}}
+      {{/drawer.list}}
+    {{/mdc-permanent-drawer}}
+
+    <div class="demo-content">
+      {{#mdc-toolbar as |toolbar|}}
+        <div class="mdc-toolbar__row">
+          <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
+            <span class="mdc-toolbar__title">Permanent Drawer Above Toolbar</span>
+          </section>
+        </div>
+      {{/mdc-toolbar}}
+    </div>
+    <div class="item">{{code-snippet name="mdc-drawer__permanent-above.hbs"}}</div>
+  </section>
+</div>
+
+<div class="demo">
+  <h1 class="mdc-typography--title">Permanent Drawer Below Toolbar</h1>
+  <section>
+    {{#mdc-toolbar as |toolbar|}}
+      <div class="mdc-toolbar__row">
+        <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
+          <span class="mdc-toolbar__title">Permanent Drawer Below Toolbar</span>
+        </section>
+      </div>
+    {{/mdc-toolbar}}
+
+    <main>
+      {{#mdc-permanent-drawer hasSpacer=false as |drawer|}}
+        {{#drawer.list as |list|}}
+          {{#list.item isActivated=true as |item|}}
+            {{item.icon "inbox"}}
+            <span class="mdc-list-item__text">Inbox</span>
+          {{/list.item}}
+          {{#list.item as |item|}}
+            {{item.icon "star"}}
+            <span class="mdc-list-item__text">Star</span>
+          {{/list.item}}
+        {{/drawer.list}}
+      {{/mdc-permanent-drawer}}
+    </main>
+    <div class="item">{{code-snippet name="mdc-drawer__permanent-below.hbs"}}</div>
+  </section>
+</div>

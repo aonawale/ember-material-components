@@ -1,1 +1,23 @@
-{{mdc-checkbox toggle=(action (mut isOn) true) checked=isOn}}
+<div class="demo">
+  <h1 class="mdc-typography--title">Default Checkbox</h1>
+  <section>
+    <div class="item">{{mdc-checkbox toggle=(action (mut isOn) true) isChecked=isOn}}</div>
+    <div class="item">{{code-snippet name="mdc-checkbox__default.hbs"}}</div>
+  </section>
+</div>
+
+<div class="demo">
+  <h1 class="mdc-typography--title">Indeterminate Checkbox</h1>
+  <section>
+    <div class="item">{{mdc-checkbox isIndeterminate=true}}</div>
+    <div class="item">{{code-snippet name="mdc-checkbox__indeterminate.hbs"}}</div>
+  </section>
+</div>
+
+<div class="demo">
+  <h1 class="mdc-typography--title">Disabled Checkbox</h1>
+  <section>
+    <div class="item">{{mdc-checkbox isDisabled=true}}</div>
+    <div class="item">{{code-snippet name="mdc-checkbox__disabled.hbs"}}</div>
+  </section>
+</div>

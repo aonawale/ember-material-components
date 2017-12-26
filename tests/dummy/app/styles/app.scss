@@ -1,7 +1,19 @@
 @import "ember-material-components";
 
 .demo {
-  margin: 16px 0;
+  padding: 16px;
+  .item {
+    margin: 8px 0;
+  }
+}
+
+.demo-content {
+  display: inline-flex;
+  flex-direction: column;
+  flex-grow: 1;
+  height: 100%;
+  width: 75%;
+  box-sizing: border-box;
 }
 
 #main-container {

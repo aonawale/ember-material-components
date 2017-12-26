@@ -1,4 +1,47 @@
-<p>{{mdc-linear-progress isReversed=true isIndeterminate=true}}</p>
-<p>{{mdc-linear-progress isIndeterminate=true}}</p>
-<p>{{mdc-linear-progress progress=0.7}}</p>
-<p>{{mdc-linear-progress progress=0.3 buffer=0.5}}</p>
+<div class="demo">
+  <h1 class="mdc-typography--title">Determinate</h1>
+  <section>
+    <div class="item">{{mdc-linear-progress progress=0.5}}</div>
+    <div class="item">{{code-snippet name="mdc-linear-progress__determinate.hbs"}}</div>
+  </section>
+</div>
+
+<div class="demo">
+  <h1 class="mdc-typography--title">Indeterminate</h1>
+  <section>
+    <div class="item">{{mdc-linear-progress isDeterminate=false}}</div>
+    <div class="item">{{code-snippet name="mdc-linear-progress__indeterminate.hbs"}}</div>
+  </section>
+</div>
+
+<div class="demo">
+  <h1 class="mdc-typography--title">Buffer</h1>
+  <section>
+    <div class="item">{{mdc-linear-progress progress=0.5 buffer=0}}</div>
+    <div class="item">{{code-snippet name="mdc-linear-progress__buffer.hbs"}}</div>
+  </section>
+</div>
+
+<div class="demo">
+  <h1 class="mdc-typography--title">Reversed</h1>
+  <section>
+    <div class="item">{{mdc-linear-progress progress=0.5 isReversed=true}}</div>
+    <div class="item">{{code-snippet name="mdc-linear-progress__reversed.hbs"}}</div>
+  </section>
+</div>
+
+<div class="demo">
+  <h1 class="mdc-typography--title">Indeterminate Reversed</h1>
+  <section>
+    <div class="item">{{mdc-linear-progress isDeterminate=false isReversed=true}}</div>
+    <div class="item">{{code-snippet name="mdc-linear-progress__indeterminate-reversed.hbs"}}</div>
+  </section>
+</div>
+
+<div class="demo">
+  <h1 class="mdc-typography--title">Buffer Reversed</h1>
+  <section>
+    <div class="item">{{mdc-linear-progress progress=0.5  buffer=0 isReversed=true}}</div>
+    <div class="item">{{code-snippet name="mdc-linear-progress__buffer-reversed.hbs"}}</div>
+  </section>
+</div>
