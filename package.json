@@ -15,7 +15,10 @@
   "scripts": {
     "build": "ember build",
     "start": "ember serve",
-    "test": "ember try:each"
+    "test": "ember try:each",
+    "deploy": "ember build --environment=production && ember github-pages:commit --message \"Deploy gh-pages from commit $(git rev-parse HEAD)\" && git push origin gh-pages:gh-pages",
+    "update-page": "ember build --environment=production && echo \"now build checking out gh-pages branch\" && git checkout gh-pages && echo \"copying it into root folder and adding\"  && cp -R dist/* ./assets && git add . && echo \"now commiting\" && git commit -m \"Update GH-Page\" && git checkout master"
+
   },
   "dependencies": {
     "@material/base": "^0.24.0",
