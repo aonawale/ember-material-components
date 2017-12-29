@@ -1,0 +1,48 @@
+{{!-- BEGIN-SNIPPET mdc-slider__continous --}}
+{{mdc-slider
+  min=0
+  max=100
+  value=30
+  input=(action (mut continuousSliderInputValue) value='detail.value')
+  change=(action (mut continuousSliderChangeValue) value='detail.value')}}
+{{!-- END-SNIPPET --}}
+
+{{!-- BEGIN-SNIPPET mdc-slider__discrete --}}
+{{mdc-slider
+  min=0
+  max=100
+  value=30
+  isDiscrete=true
+  input=(action (mut continuousSliderInputValue) value='detail.value')
+  change=(action (mut continuousSliderChangeValue) value='detail.value')}}
+{{!-- END-SNIPPET --}}
+
+{{!-- BEGIN-SNIPPET mdc-slider__step --}}
+{{mdc-slider
+  min=0
+  max=100
+  value=30
+  step=5
+  input=(action (mut continuousSliderInputValue) value='detail.value')
+  change=(action (mut continuousSliderChangeValue) value='detail.value')}}
+{{!-- END-SNIPPET --}}
+
+{{!-- BEGIN-SNIPPET mdc-slider__tracker-markers --}}
+{{mdc-slider
+  min=0
+  max=100
+  step=5
+  value=30
+  isDiscrete=true
+  hasTrackMarkers=true
+  input=(action (mut trackerSliderInputValue) value='detail.value')
+  change=(action (mut trackerSliderChangeValue) value='detail.value')}}
+{{!-- END-SNIPPET --}}
+
+{{!-- BEGIN-SNIPPET mdc-slider__disabled --}}
+{{mdc-slider
+  min=0
+  max=100
+  value=30
+  isDisabled=true}}
+{{!-- END-SNIPPET --}}

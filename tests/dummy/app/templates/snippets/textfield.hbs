@@ -1,0 +1,36 @@
+{{!-- BEGIN-SNIPPET mdc-textfield__default --}}
+{{mdc-textfield label="Text Field"}}
+{{!-- END-SNIPPET --}}
+
+{{!-- BEGIN-SNIPPET mdc-textfield__outlined --}}
+{{mdc-textfield label="Outlined" isOutlined=true}}
+{{!-- END-SNIPPET --}}
+
+{{!-- BEGIN-SNIPPET mdc-textfield__full-width --}}
+{{mdc-textfield placeholder="Full-Width Text Field" isFullWidth=true}}
+{{!-- END-SNIPPET --}}
+
+{{!-- BEGIN-SNIPPET mdc-textfield__full-functionality --}}
+{{mdc-textfield
+  label="Email"
+  icon="email"
+  isDense=isEmailDense
+  isBoxed=isEmailBoxed
+  isValid=isEmailValid
+  isRequired=isEmailRequired
+  isDisabled=isEmailDisabled
+  ariaControls="email-helper-text"
+  isTrailingIcon=isEmailTrailingIcon}}
+
+  <p id="email-helper-text" class="mdc-text-field-helper-text mdc-text-field-helper-text--persistent mdc-text-field-helper-text--validation-msg" aria-hidden="true">
+    This will be displayed on your public profile
+  </p>
+{{!-- END-SNIPPET --}}
+
+{{!-- BEGIN-SNIPPET mdc-textarea__default --}}
+{{mdc-textarea label="Text Area"}}
+{{!-- END-SNIPPET --}}
+
+{{!-- BEGIN-SNIPPET mdc-textarea__full-width --}}
+{{mdc-textarea label="Full-Width Text Area" isFullWidth=true}}
+{{!-- END-SNIPPET --}}

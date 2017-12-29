@@ -25,6 +25,8 @@ Router.map(function() {
   this.route('icon-toggle');
   this.route('grid-list');
   this.route('drawer');
+  this.route('toolbar');
+  this.route('switch');
 });
 
 export default Router;

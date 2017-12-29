@@ -1,5 +1,89 @@
-{{mdc-button text="Show" click=(action (mut showSnack) true)}}
-{{mdc-snackbar
-  isShowing=showSnack
-  hidegg=(action (mut showSnack) false)
-  message="This means sending anonymous location data to Google"}}
+<div class="demo">
+  <h1 class="mdc-typography--title">Snackbar</h1>
+  <section>
+    <div class="item">
+      {{#mdc-button click=(action (mut isShowingSnackbar) true)}}Show Snackbar{{/mdc-button}}
+
+      {{mdc-snackbar
+        isShown=isShowingSnackbar
+        hide=(action (mut isShowingSnackbar) false)
+        message="This means sending anonymous location data to Google"}}
+    </div>
+    <div class="item">{{code-snippet name="mdc-snackbar__default.hbs"}}</div>
+  </section>
+</div>
+
+<div class="demo">
+  <h1 class="mdc-typography--title">Start Aligned Snackbar (tablet and desktop only)</h1>
+  <section>
+    <div class="item">
+      {{#mdc-button click=(action (mut isShowingStartAlignedSnackbar) true)}}Show Start Aligned Snackbar{{/mdc-button}}
+
+      {{mdc-snackbar
+        isStartAligned=true
+        isShown=isShowingStartAlignedSnackbar
+        hide=(action (mut isShowingStartAlignedSnackbar) false)
+        message="This means sending anonymous location data to Google"}}
+    </div>
+    <div class="item">{{code-snippet name="mdc-snackbar__start-aligned.hbs"}}</div>
+  </section>
+</div>
+
+<div class="demo">
+  <h1 class="mdc-typography--title">Snackbar Action</h1>
+  <section>
+    <div class="item">
+      {{#mdc-button click=(action (mut isShowingActionSnackbar) true)}}Show Action Snackbar{{/mdc-button}}
+
+      {{mdc-snackbar
+        actionText="UNDO"
+        actionHandler=(action (mut clickedUndo) true)
+        isShown=isShowingActionSnackbar
+        hide=(action (mut isShowingActionSnackbar) false)
+        message="This means sending anonymous location data to Google"}}
+    </div>
+    <div class="item">
+      {{#if clickedUndo}}
+        Clicked Undo Action
+      {{/if}}
+    </div>
+    <div class="item">{{code-snippet name="mdc-snackbar__action.hbs"}}</div>
+  </section>
+</div>
+
+<div class="demo">
+  <h1 class="mdc-typography--title">Multiline Snackbar</h1>
+  <section>
+    <div class="item">
+      {{#mdc-button click=(action (mut isShowingMultilineSnackbar) true)}}Show Multiline Snackbar{{/mdc-button}}
+
+      {{mdc-snackbar
+        multiline=true
+        actionText="UNDO"
+        actionOnBottom=true
+        actionHandler=(action (mut clickedMultilineUndo) true)
+        isShown=isShowingMultilineSnackbar
+        hide=(action (mut isShowingMultilineSnackbar) false)
+        message="This means sending anonymous location data to Google. This is the second line text."}}
+    </div>
+    <div class="item">{{code-snippet name="mdc-snackbar__multiline.hbs"}}</div>
+  </section>
+</div>
+
+<div class="demo">
+  <h1 class="mdc-typography--title">Keep snackbar when the action button is pressed</h1>
+  <section>
+    <div class="item">
+      {{#mdc-button click=(action (mut isShowingkeepAfterUndoSnackbar) true)}}Show Snackbar{{/mdc-button}}
+
+      {{mdc-snackbar
+        actionText="UNDO"
+        dismissesOnAction=false
+        actionHandler=(action (mut clickedkeepSnackbarAfterUndo) true)
+        isShown=isShowingkeepAfterUndoSnackbar
+        hide=(action (mut isShowingkeepAfterUndoSnackbar) false)
+        message="This means sending anonymous location data to Google"}}
+    </div>
+    <div class="item">{{code-snippet name="mdc-snackbar__keep-after-undo.hbs"}}</div>
+  </section>
+</div>

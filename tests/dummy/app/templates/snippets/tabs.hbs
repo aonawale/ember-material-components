@@ -1,0 +1,48 @@
+{{!-- BEGIN-SNIPPET mdc-tab-bar__default --}}
+{{#mdc-tab-bar activeTabIndex=1 change=(action (mut selected) value='target.detail') as |tab-bar|}}
+  {{#tab-bar.tab}}Home{{/tab-bar.tab}}
+  {{#tab-bar.tab}}Merchandise{{/tab-bar.tab}}
+  {{#tab-bar.tab}}About Us{{/tab-bar.tab}}
+{{/mdc-tab-bar}}
+{{!-- END-SNIPPET --}}
+
+{{!-- BEGIN-SNIPPET mdc-tab-bar__icon --}}
+{{#mdc-tab-bar isIconTabBar=true as |tab-bar|}}
+  {{#tab-bar.tab}}{{tab-bar.icon "phone" ariaLabel="Recents"}}{{/tab-bar.tab}}
+  {{#tab-bar.tab}}{{tab-bar.icon "favorite" ariaLabel="Favorites"}}{{/tab-bar.tab}}
+  {{#tab-bar.tab}}{{tab-bar.icon "person_pin" ariaLabel="nearby"}}{{/tab-bar.tab}}
+{{/mdc-tab-bar}}
+{{!-- END-SNIPPET --}}
+
+{{!-- BEGIN-SNIPPET mdc-tab-bar__icon-text --}}
+{{#mdc-tab-bar isIconTabBarWithText=true as |tab-bar|}}
+  {{#tab-bar.tab}}
+    {{tab-bar.icon "phone" ariaLabel="Recents"}}
+    <span class="mdc-tab__icon-text">Recents</span>
+  {{/tab-bar.tab}}
+  {{#tab-bar.tab}}
+    {{tab-bar.icon "favorite" ariaLabel="Favorites"}}
+    <span class="mdc-tab__icon-text">Favorites</span>
+  {{/tab-bar.tab}}
+  {{#tab-bar.tab}}
+    {{tab-bar.icon "person_pin" ariaLabel="nearby"}}
+    <span class="mdc-tab__icon-text">Nearby</span>
+  {{/tab-bar.tab}}
+{{/mdc-tab-bar}}
+{{!-- END-SNIPPET --}}
+
+{{!-- BEGIN-SNIPPET mdc-tab-bar__scroller --}}
+{{#mdc-tab-bar-scroller as |tab-bar-scroller|}}
+  {{#tab-bar-scroller.tab-bar activeTabIndex=5 change=(action (mut selected) value='target.detail') as |tab-bar|}}
+    {{#tab-bar.tab}}Item Two{{/tab-bar.tab}}
+    {{#tab-bar.tab}}Item Two{{/tab-bar.tab}}
+    {{#tab-bar.tab}}Item Three{{/tab-bar.tab}}
+    {{#tab-bar.tab}}Item Four{{/tab-bar.tab}}
+    {{#tab-bar.tab}}Item Five{{/tab-bar.tab}}
+    {{#tab-bar.tab}}Item Six{{/tab-bar.tab}}
+    {{#tab-bar.tab}}Item Seven{{/tab-bar.tab}}
+    {{#tab-bar.tab}}Item Eight{{/tab-bar.tab}}
+    {{#tab-bar.tab}}Item Nine{{/tab-bar.tab}}
+  {{/tab-bar-scroller.tab-bar}}
+{{/mdc-tab-bar-scroller}}
+{{!-- END-SNIPPET --}}

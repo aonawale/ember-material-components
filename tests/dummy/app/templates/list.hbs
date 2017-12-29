@@ -1,40 +1,213 @@
-{{#mdc-list isAvaterList=true as |list|}}
-  {{#list.item}}
-    <span class="mdc-list-item__start-detail">
-      <img class="mdc-list-item__graphic" src="http://via.placeholder.com/30x30">
-    </span>
-    Janet Perkins
-  {{/list.item}}
-  {{#list.item}}
-    <span class="mdc-list-item__start-detail">
-      <img class="mdc-list-item__graphic" src="http://via.placeholder.com/30x30">
-    </span>
-    Mary Johnson
-  {{/list.item}}
-{{/mdc-list}}
+<div class="demo">
+  <h1 class="mdc-typography--title">Basic List</h1>
+  <section>
+    <div class="item">
+      {{#mdc-list as |list|}}
+        {{#list.item}}Single-line item{{/list.item}}
+        {{#list.item}}Single-line item{{/list.item}}
+        {{#list.item}}Single-line item{{/list.item}}
+      {{/mdc-list}}
+    </div>
+    <div class="item">{{code-snippet name="mdc-list__basic.hbs"}}</div>
+  </section>
+</div>
 
-{{#mdc-list isTwoLineListItem=true as |list|}}
-  {{#list.item}}
-    <span class="mdc-list-item__text">
-      Two-line item
-      <span class="mdc-list-item__secondary-text">Secondary text</span>
-    </span>
-  {{/list.item}}
-  {{#list.item}}
-    <span class="mdc-list-item__text">
-      Two-line item
-      <span class="mdc-list-item__secondary-text">Secondary text</span>
-    </span>
-  {{/list.item}}
-{{/mdc-list}}
+<div class="demo">
+  <h1 class="mdc-typography--title">Dense List</h1>
+  <section>
+    <div class="item">
+      {{#mdc-list isDense=true as |list|}}
+        {{#list.item}}Single-line item{{/list.item}}
+        {{#list.item}}Single-line item{{/list.item}}
+        {{#list.item}}Single-line item{{/list.item}}
+      {{/mdc-list}}
+    </div>
+    <div class="item">{{code-snippet name="mdc-list__dense.hbs"}}</div>
+  </section>
+</div>
 
-{{#mdc-list as |list|}}
-  {{#list.item}}
-    <i class="mdc-list-item__graphic material-icons mdc-list-item__start-detail" aria-hidden="true">network_wifi</i>
-    Wi-Fi
-  {{/list.item}}
-  {{#list.item}}
-    <i class="mdc-list-item__graphic material-icons mdc-list-item__start-detail" aria-hidden="true">bluetooth</i>
-    Bluetooth
-  {{/list.item}}
-{{/mdc-list}}
+<div class="demo">
+  <h1 class="mdc-typography--title">Start Detail List</h1>
+  <section>
+    <div class="item">
+      {{#mdc-list as |list|}}
+        {{#mdc-list as |list|}}
+          {{#list.item}}
+            {{item.icon "network_wifi" class="mdc-list-item__start-detail"}}
+            Wi-Fi
+          {{/list.item}}
+          {{#list.item}}
+            {{item.icon "bluetooth" class="mdc-list-item__start-detail"}}
+            Bluetooth
+          {{/list.item}}
+        {{/mdc-list}}
+      {{/mdc-list}}
+    </div>
+    <div class="item">{{code-snippet name="mdc-list__start-detail.hbs"}}</div>
+  </section>
+</div>
+
+<div class="demo">
+  <h1 class="mdc-typography--title">End Detail List</h1>
+  <section>
+    <div class="item">
+      {{#mdc-list as |list|}}
+        {{#mdc-list as |list|}}
+          {{#list.item as |item|}}
+            Wi-Fi
+            {{item.icon "network_wifi" class="mdc-list-item__end-detail"}}
+          {{/list.item}}
+          {{#list.item as |item|}}
+            Bluetooth
+            {{item.icon "bluetooth" class="mdc-list-item__end-detail"}}
+          {{/list.item}}
+        {{/mdc-list}}
+      {{/mdc-list}}
+    </div>
+    <div class="item">{{code-snippet name="mdc-list__end-detail.hbs"}}</div>
+  </section>
+</div>
+
+<div class="demo">
+  <h1 class="mdc-typography--title">Two-line List</h1>
+  <section>
+    <div class="item">
+      {{#mdc-list isTwoLineListItem=true as |list|}}
+        {{#list.item}}
+          <span class="mdc-list-item__text">
+            Two-line item
+            <span class="mdc-list-item__secondary-text">Secondary text</span>
+          </span>
+        {{/list.item}}
+        {{#list.item}}
+          <span class="mdc-list-item__text">
+            Two-line item
+            <span class="mdc-list-item__secondary-text">Secondary text</span>
+          </span>
+        {{/list.item}}
+      {{/mdc-list}}
+    </div>
+    <div class="item">{{code-snippet name="mdc-list__two-line.hbs"}}</div>
+  </section>
+</div>
+
+<div class="demo">
+  <h1 class="mdc-typography--title">Avater List</h1>
+  <section>
+    <div class="item">
+      {{#mdc-list isAvaterList=true as |list|}}
+        {{#list.item}}
+          <img class="mdc-list-item__graphic mdc-list-item__start-detail" src="http://via.placeholder.com/56x56">
+          Janet Perkins
+        {{/list.item}}
+        {{#list.item}}
+          <img class="mdc-list-item__graphic mdc-list-item__start-detail" src="http://via.placeholder.com/56x56">
+          Mary Johnson
+        {{/list.item}}
+      {{/mdc-list}}
+    </div>
+    <div class="item">{{code-snippet name="mdc-list__avater.hbs"}}</div>
+  </section>
+</div>
+
+<div class="demo">
+  <h1 class="mdc-typography--title">Avater + End Detail List</h1>
+  <section>
+    <div class="item">
+      {{#mdc-list isAvaterList=true as |list|}}
+        {{#list.item as |item|}}
+          <img class="mdc-list-item__graphic mdc-list-item__start-detail" src="http://via.placeholder.com/56x56">
+          Janet Perkins
+          {{item.icon "favorite" class="mdc-list-item__end-detail"}}
+        {{/list.item}}
+        {{#list.item as |item|}}
+          <img class="mdc-list-item__graphic mdc-list-item__start-detail" src="http://via.placeholder.com/56x56">
+          Mary Johnson
+          {{item.icon "favorite_border" class="mdc-list-item__end-detail"}}
+        {{/list.item}}
+      {{/mdc-list}}
+    </div>
+    <div class="item">{{code-snippet name="mdc-list__avater-end-detail.hbs"}}</div>
+  </section>
+</div>
+
+<div class="demo">
+  <h1 class="mdc-typography--title">Using Ink Ripples for Interactive Lists</h1>
+  <section>
+    <div class="item">
+      {{#mdc-list as |list|}}
+        {{#mdc-list as |list|}}
+          {{#list.item hasRipples=true}}
+            {{item.icon "network_wifi" class="mdc-list-item__start-detail"}}
+            Wi-Fi
+          {{/list.item}}
+          {{#list.item hasRipples=true}}
+            {{item.icon "bluetooth" class="mdc-list-item__start-detail"}}
+            Bluetooth
+          {{/list.item}}
+        {{/mdc-list}}
+      {{/mdc-list}}
+    </div>
+    <div class="item">{{code-snippet name="mdc-list__interactive.hbs"}}</div>
+  </section>
+</div>
+
+<div class="demo">
+  <h1 class="mdc-typography--title">Full-Width Dividers</h1>
+  <section>
+    <div class="item">
+      {{#mdc-list as |list|}}
+        {{#list.item}}Item 1 - Division 1{{/list.item}}
+        {{#list.item}}Item 2 - Division 1{{/list.item}}
+        {{#list.item}}Item 3 - Division 1{{/list.item}}
+        <li role="separator" class="mdc-list-divider"></li>
+        {{#list.item}}Item 1 - Division 2{{/list.item}}
+        {{#list.item}}Item 2 - Division 2{{/list.item}}
+      {{/mdc-list}}
+    </div>
+    <div class="item">{{code-snippet name="mdc-list__full-width-divider.hbs"}}</div>
+  </section>
+</div>
+
+<div class="demo">
+  <h1 class="mdc-typography--title">Inset Dividers</h1>
+  <section>
+    <div class="item">
+      {{#mdc-list isAvaterList=true as |list|}}
+        {{#list.item}}<img class="mdc-list-item__graphic mdc-list-item__start-detail" src="http://via.placeholder.com/56x56">Item 1 - Division 1{{/list.item}}
+        {{#list.item}}<img class="mdc-list-item__graphic mdc-list-item__start-detail" src="http://via.placeholder.com/56x56">Item 2 - Division 1{{/list.item}}
+        {{#list.item}}<img class="mdc-list-item__graphic mdc-list-item__start-detail" src="http://via.placeholder.com/56x56">Item 3 - Division 1{{/list.item}}
+        <li role="separator" class="mdc-list-divider mdc-list-divider--inset"></li>
+        {{#list.item}}<img class="mdc-list-item__graphic mdc-list-item__start-detail" src="http://via.placeholder.com/56x56">Item 1 - Division 2{{/list.item}}
+        {{#list.item}}<img class="mdc-list-item__graphic mdc-list-item__start-detail" src="http://via.placeholder.com/56x56">Item 2 - Division 2{{/list.item}}
+      {{/mdc-list}}
+    </div>
+    <div class="item">{{code-snippet name="mdc-list__inset-divider.hbs"}}</div>
+  </section>
+</div>
+
+<div class="demo">
+  <h1 class="mdc-typography--title">Grouped List</h1>
+  <section>
+    <div class="item">
+      <div class="mdc-list-group">
+        <h3 class="mdc-list-group__subheader">List 1</h3>
+        {{#mdc-list as |list|}}
+          {{#list.item}}Single-line item{{/list.item}}
+          {{#list.item}}Single-line item{{/list.item}}
+          {{#list.item}}Single-line item{{/list.item}}
+        {{/mdc-list}}
+
+        <hr class="mdc-list-divider">
+
+        <h3 class="mdc-list-group__subheader">List 2</h3>
+        {{#mdc-list as |list|}}
+          {{#list.item}}Single-line item{{/list.item}}
+          {{#list.item}}Single-line item{{/list.item}}
+          {{#list.item}}Single-line item{{/list.item}}
+        {{/mdc-list}}
+      </div>
+    </div>
+    <div class="item">{{code-snippet name="mdc-list__grouped.hbs"}}</div>
+  </section>
+</div>

@@ -1,48 +1,72 @@
-<p>
-  {{#mdc-tab-bar-scroller as |tab-bar-scroller|}}
-    {{#tab-bar-scroller.tab-bar activeTabIndex=5 change=(action (mut selected) value='target.detail') as |tab-bar|}}
-      {{#tab-bar.tab}}Item Two{{/tab-bar.tab}}
-      {{#tab-bar.tab}}Item Two{{/tab-bar.tab}}
-      {{#tab-bar.tab}}Item Three{{/tab-bar.tab}}
-      {{#tab-bar.tab}}Item Four{{/tab-bar.tab}}
-      {{#tab-bar.tab}}Item Five{{/tab-bar.tab}}
-      {{#tab-bar.tab}}Item Six{{/tab-bar.tab}}
-      {{#tab-bar.tab}}Item Seven{{/tab-bar.tab}}
-      {{#tab-bar.tab}}Item Eight{{/tab-bar.tab}}
-      {{#tab-bar.tab}}Item Night{{/tab-bar.tab}}
-    {{/tab-bar-scroller.tab-bar}}
-  {{/mdc-tab-bar-scroller}}
-</p>
+<div class="demo">
+  <h1 class="mdc-typography--title">Tab Bar</h1>
+  <section>
+    <div class="item">
+      {{#mdc-tab-bar activeTabIndex=1 change=(action (mut selected) value='target.detail') as |tab-bar|}}
+        {{#tab-bar.tab}}Home{{/tab-bar.tab}}
+        {{#tab-bar.tab}}Merchandise{{/tab-bar.tab}}
+        {{#tab-bar.tab}}About Us{{/tab-bar.tab}}
+      {{/mdc-tab-bar}}
+    </div>
+    <div class="item">{{code-snippet name="mdc-tab-bar__default.hbs"}}</div>
+  </section>
+</div>
 
-<p>
-  {{#mdc-tab-bar activeTabIndex=1 change=(action (mut selected) value='target.detail') as |tab-bar|}}
-    {{#tab-bar.tab}}Home{{/tab-bar.tab}}
-    {{#tab-bar.tab}}Merchandise{{/tab-bar.tab}}
-    {{#tab-bar.tab}}About Us{{/tab-bar.tab}}
-  {{/mdc-tab-bar}}
-</p>
+<div class="demo">
+  <h1 class="mdc-typography--title">Tab Bar With Icon Labels</h1>
+  <section>
+    <div class="item">
+      {{#mdc-tab-bar isIconTabBar=true as |tab-bar|}}
+        {{#tab-bar.tab}}{{tab-bar.icon "phone" ariaLabel="Recents"}}{{/tab-bar.tab}}
+        {{#tab-bar.tab}}{{tab-bar.icon "favorite" ariaLabel="Favorites"}}{{/tab-bar.tab}}
+        {{#tab-bar.tab}}{{tab-bar.icon "person_pin" ariaLabel="nearby"}}{{/tab-bar.tab}}
+      {{/mdc-tab-bar}}
+    </div>
+    <div class="item">{{code-snippet name="mdc-tab-bar__icon.hbs"}}</div>
+  </section>
+</div>
 
-<p>
-  {{#mdc-tab-bar as |tab-bar|}}
-    {{#tab-bar.tab}}{{tab-bar.icon "phone" ariaLabel="Recents"}}{{/tab-bar.tab}}
-    {{#tab-bar.tab}}{{tab-bar.icon "favorite" ariaLabel="Favorites"}}{{/tab-bar.tab}}
-    {{#tab-bar.tab}}{{tab-bar.icon "person_pin" ariaLabel="nearby"}}{{/tab-bar.tab}}
-  {{/mdc-tab-bar}}
-</p>
+<div class="demo">
+  <h1 class="mdc-typography--title">Tab Bar With Icon and Text Labels</h1>
+  <section>
+    <div class="item">
+      {{#mdc-tab-bar isIconTabBarWithText=true as |tab-bar|}}
+        {{#tab-bar.tab}}
+          {{tab-bar.icon "phone" ariaLabel="Recents"}}
+          <span class="mdc-tab__icon-text">Recents</span>
+        {{/tab-bar.tab}}
+        {{#tab-bar.tab}}
+          {{tab-bar.icon "favorite" ariaLabel="Favorites"}}
+          <span class="mdc-tab__icon-text">Favorites</span>
+        {{/tab-bar.tab}}
+        {{#tab-bar.tab}}
+          {{tab-bar.icon "person_pin" ariaLabel="nearby"}}
+          <span class="mdc-tab__icon-text">Nearby</span>
+        {{/tab-bar.tab}}
+      {{/mdc-tab-bar}}
+    </div>
+    <div class="item">{{code-snippet name="mdc-tab-bar__icon-text.hbs"}}</div>
+  </section>
+</div>
 
-<p>
-  {{#mdc-tab-bar as |tab-bar|}}
-    {{#tab-bar.tab}}
-      {{tab-bar.icon "phone" ariaLabel="Recents"}}
-      <span class="mdc-tab__icon-text">Recents</span>
-    {{/tab-bar.tab}}
-    {{#tab-bar.tab}}
-      {{tab-bar.icon "favorite" ariaLabel="Favorites"}}
-      <span class="mdc-tab__icon-text">Favorites</span>
-    {{/tab-bar.tab}}
-    {{#tab-bar.tab}}
-      {{tab-bar.icon "person_pin" ariaLabel="nearby"}}
-      <span class="mdc-tab__icon-text">Nearby</span>
-    {{/tab-bar.tab}}
-  {{/mdc-tab-bar}}
-</p>
+<div class="demo">
+  <h1 class="mdc-typography--title">Tab Bar Scroller</h1>
+  <section>
+    <div class="item">
+      {{#mdc-tab-bar-scroller as |tab-bar-scroller|}}
+        {{#tab-bar-scroller.tab-bar activeTabIndex=5 change=(action (mut selected) value='target.detail') as |tab-bar|}}
+          {{#tab-bar.tab}}Item Two{{/tab-bar.tab}}
+          {{#tab-bar.tab}}Item Two{{/tab-bar.tab}}
+          {{#tab-bar.tab}}Item Three{{/tab-bar.tab}}
+          {{#tab-bar.tab}}Item Four{{/tab-bar.tab}}
+          {{#tab-bar.tab}}Item Five{{/tab-bar.tab}}
+          {{#tab-bar.tab}}Item Six{{/tab-bar.tab}}
+          {{#tab-bar.tab}}Item Seven{{/tab-bar.tab}}
+          {{#tab-bar.tab}}Item Eight{{/tab-bar.tab}}
+          {{#tab-bar.tab}}Item Nine{{/tab-bar.tab}}
+        {{/tab-bar-scroller.tab-bar}}
+      {{/mdc-tab-bar-scroller}}
+    </div>
+    <div class="item">{{code-snippet name="mdc-tab-bar__scroller.hbs"}}</div>
+  </section>
+</div>

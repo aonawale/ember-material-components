@@ -1,7 +1,7 @@
 <div class="demo">
   <h1 class="mdc-typography--title">Text Button</h1>
   <section>
-    <div class="item">{{mdc-button text="BASELINE"}}</div>
+    <div class="item">{{#mdc-button}}BASELINE{{/mdc-button}}</div>
     <div class="item">{{code-snippet name="mdc-button__baseline.hbs"}}</div>
   </section>
 </div>
@@ -9,11 +9,20 @@
 <div class="demo">
   <h1 class="mdc-typography--title">Icon Button</h1>
   <section>
-    <div class="item">{{mdc-button icon="alarm"}}</div>
+    <div class="item">
+      {{#mdc-button as |button|}}
+        {{button.icon "alarm"}}
+      {{/mdc-button}}
+    </div>
     <div class="item">{{code-snippet name="mdc-button__icon.hbs"}}</div>
   </section>
   <section>
-    <div class="item">{{mdc-button text="ICON" icon="alarm"}}</div>
+    <div class="item">
+      {{#mdc-button as |button|}}
+        ICON
+        {{button.icon "alarm"}}
+      {{/mdc-button}}
+    </div>
     <div class="item">{{code-snippet name="mdc-button__icon-text.hbs"}}</div>
   </section>
 </div>
@@ -21,7 +30,7 @@
 <div class="demo">
   <h1 class="mdc-typography--title">Raised Button</h1>
   <section>
-    <div class="item">{{mdc-button text="RAISED" isRaised=true}}</div>
+    <div class="item">{{#mdc-button isRaised=true}}RAISED{{/mdc-button}}</div>
     <div class="item">{{code-snippet name="mdc-button__raised.hbs"}}</div>
   </section>
 </div>
@@ -29,7 +38,7 @@
 <div class="demo">
   <h1 class="mdc-typography--title">Stroked Button (Experimental)</h1>
   <section>
-    <div class="item">{{mdc-button text="STROKED" isStroked=true}}</div>
+    <div class="item">{{#mdc-button isStroked=true}}STROKED{{/mdc-button}}</div>
     <div class="item">{{code-snippet name="mdc-button__stroked.hbs"}}</div>
   </section>
 </div>
@@ -37,7 +46,7 @@
 <div class="demo">
   <h1 class="mdc-typography--title">Unelevated Button</h1>
   <section>
-    <div class="item">{{mdc-button text="UNELEVATED" isUnelevated=true}}</div>
+    <div class="item">{{#mdc-button isUnelevated=true}}UNELEVATED{{/mdc-button}}</div>
     <div class="item">{{code-snippet name="mdc-button__unelevated.hbs"}}</div>
   </section>
 </div>
@@ -45,7 +54,7 @@
 <div class="demo">
   <h1 class="mdc-typography--title">Dense Button</h1>
   <section>
-    <div class="item">{{mdc-button text="DENSE" isDense=true}}</div>
+    <div class="item">{{#mdc-button isDense=true}}DENSE{{/mdc-button}}</div>
     <div class="item">{{code-snippet name="mdc-button__dense.hbs"}}</div>
   </section>
 </div>
@@ -53,7 +62,7 @@
 <div class="demo">
   <h1 class="mdc-typography--title">Compact Button</h1>
   <section>
-    <div class="item">{{mdc-button text="COMPACT" isCompact=true}}</div>
+    <div class="item">{{#mdc-button isCompact=true}}COMPACT{{/mdc-button}}</div>
     <div class="item">{{code-snippet name="mdc-button__compact.hbs"}}</div>
   </section>
 </div>
@@ -61,7 +70,7 @@
 <div class="demo">
   <h1 class="mdc-typography--title">Disabled Button</h1>
   <section>
-    <div class="item">{{mdc-button text="DISABLED" isDisabled=true}}</div>
+    <div class="item">{{#mdc-button isDisabled=true}}DISABLED{{/mdc-button}}</div>
     <div class="item">{{code-snippet name="mdc-button__disabled.hbs"}}</div>
   </section>
 </div>

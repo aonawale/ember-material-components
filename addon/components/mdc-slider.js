@@ -16,8 +16,6 @@ export default MDCBase.extend({
   isDiscrete: false,
   hasTrackMarkers: false,
 
-  _mdcComponent: null,
-
   classNames: ['mdc-slider'],
   classNameBindings: [
     'isDiscrete:mdc-slider--discrete',
