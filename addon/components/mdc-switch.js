@@ -5,6 +5,7 @@ import layout from '../templates/components/mdc-switch';
 
 export default Component.extend({
   layout,
+  isOn: false,
   isDisabled: false,
   classNames: ['mdc-switch'],
   classNameBindings: [

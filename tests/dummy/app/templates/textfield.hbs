@@ -1,15 +1,127 @@
-{{mdc-textfield label="Username" ariaControls="username-helper-text"}}
-<p id="username-helper-text" class="mdc-text-field-helper-text" aria-hidden="true">
-  This will be displayed on your public profile
-</p>
-{{mdc-textfield label="Email" isRequired=true}}
-{{mdc-textfield placeholder="Full-Width Text Field" isFullWidth=true}}
-{{mdc-textfield label="Outlined" isOutlined=true}}
-{{mdc-textfield label="Disabled" isDisabled=true}}
-{{mdc-textfield label="Your Name" icon="event"}}
-{{mdc-textfield label="Your Name" icon="event" isTrailingIcon=true}}
+<div class="demo">
+  <h1 class="mdc-typography--title">Text Field</h1>
+  <section>
+    <div class="item">
+      {{mdc-textfield label="Text Field"}}
+    </div>
+    <div class="item">{{code-snippet name="mdc-textfield__default.hbs"}}</div>
+  </section>
+</div>
 
-<p>
-  {{mdc-textarea label="First Name"}}
-  {{mdc-textarea label="First Name" isFullWidth=true}}
-</p>
+<div class="demo">
+  <h1 class="mdc-typography--title">Full Functionality Text Field</h1>
+  <section>
+    <div class="item">
+      {{mdc-textfield
+        label="Email"
+        icon=(if hasEmailIcon 'email')
+        isBoxed=(or hasEmailIcon isEmailBoxed)
+        isDense=isEmailDense
+        isValid=(not isEmailValid)
+        isRequired=isEmailRequired
+        isDisabled=isEmailDisabled
+        ariaControls="email-helper-text"
+        isTrailingIcon=(and hasEmailIcon isEmailTrailingIcon)}}
+
+      {{#if isShowingHelperText}}
+        <p id="email-helper-text" class="mdc-text-field-helper-text {{if isPersistentEmailHelperText "mdc-text-field-helper-text--persistent"}} {{if isValidationEmailHelperText "mdc-text-field-helper-text--validation-msg"}}" aria-hidden="true">
+          This will be displayed on your public profile
+        </p>
+      {{/if}}
+    </div>
+
+    <div class="item">
+      {{#mdc-form-field}}
+        {{mdc-checkbox inputId="dense-checkbox" on-change=(toggle-action 'isEmailDense' this)}}
+        <label for="dense-checkbox">Dense</label>
+      {{/mdc-form-field}}
+      <br>
+      {{#mdc-form-field}}
+        {{mdc-checkbox inputId="invalid-checkbox" on-change=(toggle-action 'isEmailValid' this)}}
+        <label for="invalid-checkbox">InValid</label>
+      {{/mdc-form-field}}
+      <br>
+      {{#mdc-form-field}}
+        {{mdc-checkbox inputId="disabled-checkbox" on-change=(toggle-action 'isEmailDisabled' this)}}
+        <label for="disabled-checkbox">Disabled</label>
+      {{/mdc-form-field}}
+      <br>
+      {{#mdc-form-field}}
+        {{mdc-checkbox inputId="required-checkbox" on-change=(toggle-action 'isEmailRequired' this)}}
+        <label for="required-checkbox">Required</label>
+      {{/mdc-form-field}}
+      <br>
+      {{#mdc-form-field}}
+        {{mdc-checkbox inputId="icon-checkbox" on-change=(toggle-action 'hasEmailIcon' this)}}
+        <label for="icon-checkbox">Icon</label>
+      {{/mdc-form-field}}
+      <br>
+      {{#mdc-form-field}}
+        {{mdc-checkbox inputId="trailing-icon-checkbox" on-change=(toggle-action 'isEmailTrailingIcon' this)}}
+        <label for="trailing-icon-checkbox">Trailing Icon</label>
+      {{/mdc-form-field}}
+      <br>
+      {{#mdc-form-field}}
+        {{mdc-checkbox inputId="boxed-checkbox" on-change=(toggle-action 'isEmailBoxed' this)}}
+        <label for="boxed-checkbox">Boxed</label>
+      {{/mdc-form-field}}
+      <br>
+      {{#mdc-form-field}}
+        {{mdc-checkbox inputId="persistent-checkbox" on-change=(toggle-action 'isShowingHelperText' this)}}
+        <label for="persistent-checkbox">Use Helper Text</label>
+      {{/mdc-form-field}}
+      <br>
+      {{#mdc-form-field}}
+        {{mdc-checkbox inputId="persistent-checkbox" on-change=(toggle-action 'isPersistentEmailHelperText' this)}}
+        <label for="persistent-checkbox">Make helper text persistent</label>
+      {{/mdc-form-field}}
+      <br>
+      {{#mdc-form-field}}
+        {{mdc-checkbox inputId="persistent-checkbox" on-change=(toggle-action 'isValidationEmailHelperText' this)}}
+        <label for="persistent-checkbox">Use helper text as validation message</label>
+      {{/mdc-form-field}}
+    </div>
+
+    <div class="item">{{code-snippet name="mdc-textfield__full-functionality.hbs"}}</div>
+  </section>
+</div>
+
+<div class="demo">
+  <h1 class="mdc-typography--title">Outlined Text Field</h1>
+  <section>
+    <div class="item">
+      {{mdc-textfield label="Outlined" isOutlined=true}}
+    </div>
+    <div class="item">{{code-snippet name="mdc-textfield__outlined.hbs"}}</div>
+  </section>
+</div>
+
+<div class="demo">
+  <h1 class="mdc-typography--title">Full Width Text Field</h1>
+  <section>
+    <div class="item">
+      {{mdc-textfield placeholder="Full-Width Text Field" isFullWidth=true}}
+    </div>
+    <div class="item">{{code-snippet name="mdc-textfield__full-width.hbs"}}</div>
+  </section>
+</div>
+
+<div class="demo">
+  <h1 class="mdc-typography--title">Text Area</h1>
+  <section>
+    <div class="item">
+      {{mdc-textarea label="Text Area"}}
+    </div>
+    <div class="item">{{code-snippet name="mdc-textarea__default.hbs"}}</div>
+  </section>
+</div>
+
+<div class="demo">
+  <h1 class="mdc-typography--title">Full Width Text Area</h1>
+  <section>
+    <div class="item">
+      {{mdc-textarea label="Full-Width Text Area" isFullWidth=true}}
+    </div>
+    <div class="item">{{code-snippet name="mdc-textarea__full-width.hbs"}}</div>
+  </section>
+</div>

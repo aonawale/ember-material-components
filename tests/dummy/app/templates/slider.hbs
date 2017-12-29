@@ -1,4 +1,102 @@
-<p>{{mdc-slider min=0 value=50 max=100}}</p>
-<p>{{mdc-slider min=0 max=100 value=30 isDiscrete=true}}</p>
-<p>{{mdc-slider min=0 max=100 value=40 isDiscrete=true hasTrackMarkers=true step=5}}</p>
-<p>{{mdc-slider min=0 max=100 value=90 isDisabled=true}}</p>
+<div class="demo">
+  <h1 class="mdc-typography--title">Continuous Slider</h1>
+  <section>
+    <div class="item">
+      {{mdc-slider
+        min=0
+        max=100
+        value=30
+        input=(action (mut continuousSliderInputValue) value='detail.value')
+        change=(action (mut continuousSliderChangeValue) value='detail.value')}}
+    </div>
+    <div class="item">
+      <span>Value from MDCSlider:input event: {{continuousSliderInputValue}}</span>
+    </div>
+    <div class="item">
+      <span>Value from MDCSlider:change event: {{continuousSliderChangeValue}}</span>
+    </div>
+    <div class="item">{{code-snippet name="mdc-slider__continous.hbs"}}</div>
+  </section>
+</div>
+
+<div class="demo">
+  <h1 class="mdc-typography--title">Discrete Slider</h1>
+  <section>
+    <div class="item">
+      {{mdc-slider
+        min=0
+        max=100
+        value=30
+        isDiscrete=true
+        input=(action (mut discreteSliderInputValue) value='detail.value')
+        change=(action (mut discreteSliderChangeValue) value='detail.value')}}
+    </div>
+    <div class="item">
+      <span>Value from MDCSlider:input event: {{discreteSliderInputValue}}</span>
+    </div>
+    <div class="item">
+      <span>Value from MDCSlider:change event: {{discreteSliderChangeValue}}</span>
+    </div>
+    <div class="item">{{code-snippet name="mdc-slider__discrete.hbs"}}</div>
+  </section>
+</div>
+
+<div class="demo">
+  <h1 class="mdc-typography--title">Step Slider</h1>
+  <section>
+    <div class="item">
+      {{mdc-slider
+        min=0
+        max=100
+        step=5
+        value=30
+        input=(action (mut stepSliderInputValue) value='detail.value')
+        change=(action (mut stepSliderChangeValue) value='detail.value')}}
+    </div>
+    <div class="item">
+      <span>Value from MDCSlider:input event: {{stepSliderInputValue}}</span>
+    </div>
+    <div class="item">
+      <span>Value from MDCSlider:change event: {{stepSliderChangeValue}}</span>
+    </div>
+    <div class="item">{{code-snippet name="mdc-slider__step.hbs"}}</div>
+  </section>
+</div>
+
+<div class="demo">
+  <h1 class="mdc-typography--title">Display tracker markers (discrete slider only)</h1>
+  <section>
+    <div class="item">
+      {{mdc-slider
+        min=0
+        max=100
+        step=5
+        value=30
+        isDiscrete=true
+        hasTrackMarkers=true
+        input=(action (mut trackerSliderInputValue) value='detail.value')
+        change=(action (mut trackerSliderChangeValue) value='detail.value')}}
+    </div>
+    <div class="item">
+      <span>Value from MDCSlider:input event: {{trackerSliderInputValue}}</span>
+    </div>
+    <div class="item">
+      <span>Value from MDCSlider:change event: {{trackerSliderChangeValue}}</span>
+    </div>
+    <div class="item">{{code-snippet name="mdc-slider__tracker-markers.hbs"}}</div>
+  </section>
+</div>
+
+<div class="demo">
+  <h1 class="mdc-typography--title">Diabled Slider</h1>
+  <section>
+    <div class="item">
+      {{mdc-slider
+        min=0
+        max=100
+        value=30
+        isDisabled=true}}
+    </div>
+    <div class="item">{{code-snippet name="mdc-slider__disabled.hbs"}}</div>
+  </section>
+</div>

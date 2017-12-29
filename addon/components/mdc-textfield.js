@@ -8,26 +8,26 @@ export default MDCBase.extend({
   layout,
   mdcClass: mdc.textfield.MDCTextField,
   icon: null,
-  trailingIcon: null,
   label: null,
   value: null,
   placeholder: null,
   minLength: null,
   isValid: true,
+  isDense: false,
+  isFocused: false,
   isDisabled: false,
   isOutlined: false,
   isRequired: false,
-  isInvalid: false,
   isFullWidth: false,
   ariaLabel: null,
   ariaControls: null,
   isTrailingIcon: false,
   iconTabindex: '0',
 
-  _mdcComponent: null,
-
   classNames: ['mdc-text-field'],
   classNameBindings: [
+    'isDense:mdc-text-field--dense',
+    'isFocused:mdc-text-field--focused',
     'isDisabled:mdc-text-field--disabled',
     'isOutlined:mdc-text-field--outlined',
     'isFullWidth:mdc-text-field--fullwidth',
@@ -46,9 +46,8 @@ export default MDCBase.extend({
     return `mdc-switch-${guidFor(this)}`;
   }),
 
-  updateElement() {
-    let textfield = get(this, '_mdcComponent');
-    textfield.valid = get(this, 'isValid');
-    textfield.disabled = get(this, 'isDisabled');
+  updateElement(mdcComponent) {
+    mdcComponent.valid = !!get(this, 'isValid');
+    mdcComponent.disabled = !!get(this, 'isDisabled');
   }
 });

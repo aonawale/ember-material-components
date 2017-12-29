@@ -1,0 +1,44 @@
+{{!-- BEGIN-SNIPPET mdc-snackbar__default --}}
+{{mdc-snackbar
+  isShown=isShowingSnackbar
+  hide=(action (mut isShowingSnackbar) false)
+  message="This means sending anonymous location data to Google"}}
+{{!-- END-SNIPPET --}}
+
+{{!-- BEGIN-SNIPPET mdc-snackbar__start-aligned --}}
+{{mdc-snackbar
+  isStartAligned=true
+  isShown=isShowingSnackbar
+  hide=(action (mut isShowingSnackbar) false)
+  message="This means sending anonymous location data to Google"}}
+{{!-- END-SNIPPET --}}
+
+{{!-- BEGIN-SNIPPET mdc-snackbar__action --}}
+{{mdc-snackbar
+  actionText="UNDO"
+  actionHandler=(action (mut clickedUndo) true)
+  isShown=isShowingActionSnackbar
+  hide=(action (mut isShowingActionSnackbar) false)
+  message="This means sending anonymous location data to Google"}}
+{{!-- END-SNIPPET --}}
+
+{{!-- BEGIN-SNIPPET mdc-snackbar__multiline --}}
+{{mdc-snackbar
+  multiline=true
+  actionText="UNDO"
+  actionOnBottom=true
+  actionHandler=(action (mut clickedMultilineUndo) true)
+  isShown=isShowingMultilineSnackbar
+  hide=(action (mut isShowingMultilineSnackbar) false)
+  message="This means sending anonymous location data to Google. This is the second line text."}}
+{{!-- END-SNIPPET --}}
+
+{{!-- BEGIN-SNIPPET mdc-snackbar__keep-after-undo --}}
+{{mdc-snackbar
+  actionText="UNDO"
+  dismissesOnAction=false
+  actionHandler=(action (mut clickedkeepSnackbarAfterUndo) true)
+  isShown=isShowingkeepAfterUndoSnackbar
+  hide=(action (mut isShowingkeepAfterUndoSnackbar) false)
+  message="This means sending anonymous location data to Google"}}
+{{!-- END-SNIPPET --}}

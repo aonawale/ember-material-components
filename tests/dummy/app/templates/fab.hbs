@@ -17,7 +17,7 @@
 <div class="demo">
   <h1 class="mdc-typography--title">Exited Fab</h1>
   <section>
-    <div class="item">{{mdc-button text="TOGGLE EXITED" click=(toggle-action 'isExited' this)}}</div>
+    <div class="item">{{#mdc-button click=(toggle-action 'isExited' this)}}TOGGLE EXITED{{/mdc-button}}</div>
     <div class="item">{{mdc-fab icon="favorite" isExited=isExited}}</div>
     <div class="item">{{code-snippet name="mdc-fab__exited.hbs"}}</div>
   </section>

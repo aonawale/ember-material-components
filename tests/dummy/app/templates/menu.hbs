@@ -1,9 +1,149 @@
-<div class="mdc-menu-anchor">
-  {{mdc-checkbox toggle=(action (mut showMenu) true) checked=showMenu}}Open Menu
-  {{#mdc-menu isOpened=showMenu cancel=(action (mut showMenu) false) select=(action (mut showMenu) false) as |menu|}}
-    {{#menu.list role="menu" ariaHidden="true" as |list|}}
-      {{#list.item role="menuitem"}}A Menu Item{{/list.item}}
-      {{#list.item role="menuitem" isDisabled="true"}}Another Menu Item{{/list.item}}
-    {{/menu.list}}
-  {{/mdc-menu}}
+<div class="demo">
+  <h1 class="mdc-typography--title">Default Menu</h1>
+  <section>
+    <div class="item">
+      {{#mdc-button click=(action (mut isShowingMenu) true)}}Open Menu{{/mdc-button}}
+      {{#mdc-menu
+        isOpened=isShowingMenu
+        cancel=(action (mut isShowingMenu) false)
+        select=(action (mut isShowingMenu) false) as |menu|}}
+          {{#menu.list}}
+            {{#menu.item}}A Menu Item{{/menu.item}}
+            {{#menu.item}}Another Menu Item{{/menu.item}}
+          {{/menu.list}}
+      {{/mdc-menu}}
+    </div>
+    <div class="item">{{code-snippet name="mdc-menu__default.hbs"}}</div>
+  </section>
+</div>
+
+<div class="demo">
+  <h1 class="mdc-typography--title">Disabled Menu Item</h1>
+  <section>
+    <div class="item">
+      {{#mdc-button click=(action (mut isShowingDisabledMenu) true)}}Open Menu{{/mdc-button}}
+      {{#mdc-menu
+        isOpened=isShowingDisabledMenu
+        cancel=(action (mut isShowingDisabledMenu) false)
+        select=(action (mut isShowingDisabledMenu) false) as |menu|}}
+          {{#menu.list}}
+            {{#menu.item}}A Menu Item{{/menu.item}}
+            {{#menu.item isDisabled=true}}Another Menu Item{{/menu.item}}
+          {{/menu.list}}
+      {{/mdc-menu}}
+    </div>
+    <div class="item">{{code-snippet name="mdc-menu__disabled.hbs"}}</div>
+  </section>
+</div>
+
+<div class="demo">
+  <h1 class="mdc-typography--title">Menu Anchor</h1>
+  <section>
+    <div class="item">
+      {{#mdc-button click=(action (mut isShowingAnchoredMenu) true)}}Open Menu{{/mdc-button}}
+
+      {{#mdc-toolbar class="mdc-menu-anchor" as |toolbar|}}
+        <div class="mdc-toolbar__row">
+          <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
+            <span class="mdc-toolbar__title">This is the menu anchor</span>
+            {{#mdc-menu
+              isOpened=isShowingAnchoredMenu
+              isOpenedFromTopRight=true
+              cancel=(action (mut isShowingAnchoredMenu) false)
+              select=(action (mut isShowingAnchoredMenu) false) as |menu|}}
+                {{#menu.list}}
+                  {{#menu.item}}A Menu Item{{/menu.item}}
+                  {{#menu.item}}Another Menu Item{{/menu.item}}
+                {{/menu.list}}
+            {{/mdc-menu}}
+          </section>
+        </div>
+      {{/mdc-toolbar}}
+    </div>
+    <div class="item">{{code-snippet name="mdc-menu__anchor.hbs"}}</div>
+  </section>
+</div>
+
+<div class="demo">
+  <h1 class="mdc-typography--title">Open From Top Left</h1>
+  <section>
+    <div class="item">
+      <div class="mdc-menu-anchor">
+        {{#mdc-button click=(action (mut isShowingTopLeftAnchoredMenu) true)}}Open Menu From Top Left{{/mdc-button}}
+        {{#mdc-menu
+          isOpened=isShowingTopLeftAnchoredMenu
+          isOpenedFromTopLeft=true
+          cancel=(action (mut isShowingTopLeftAnchoredMenu) false)
+          select=(action (mut isShowingTopLeftAnchoredMenu) false) as |menu|}}
+            {{#menu.list}}
+              {{#menu.item}}A Menu Item{{/menu.item}}
+              {{#menu.item}}Another Menu Item{{/menu.item}}
+            {{/menu.list}}
+        {{/mdc-menu}}
+      </div>
+    </div>
+    <div class="item">{{code-snippet name="mdc-menu__open-from-top-left.hbs"}}</div>
+  </section>
+</div>
+
+<div class="demo">
+  <h1 class="mdc-typography--title">Open From Top Right</h1>
+  <section>
+    <div class="item">
+      {{#mdc-button click=(action (mut isShowingTopRightAnchoredMenu) true)}}Open Menu From Top Right{{/mdc-button}}
+      {{#mdc-menu
+        isOpened=isShowingTopRightAnchoredMenu
+        isOpenedFromTopRight=true
+        cancel=(action (mut isShowingTopRightAnchoredMenu) false)
+        select=(action (mut isShowingTopRightAnchoredMenu) false) as |menu|}}
+          {{#menu.list}}
+            {{#menu.item}}A Menu Item{{/menu.item}}
+            {{#menu.item}}Another Menu Item{{/menu.item}}
+          {{/menu.list}}
+      {{/mdc-menu}}
+    </div>
+    <div class="item">{{code-snippet name="mdc-menu__open-from-top-left.hbs"}}</div>
+  </section>
+</div>
+
+<div class="demo">
+  <h1 class="mdc-typography--title">Open From Bottom Left</h1>
+  <section>
+    <div class="item">
+      <div class="mdc-menu-anchor">
+        {{#mdc-button click=(action (mut isShowingBottomLeftAnchoredMenu) true)}}Open Menu{{/mdc-button}}
+        {{#mdc-menu
+          isOpened=isShowingBottomLeftAnchoredMenu
+          isOpenedFromBottomLeft=true
+          cancel=(action (mut isShowingBottomLeftAnchoredMenu) false)
+          select=(action (mut isShowingBottomLeftAnchoredMenu) false) as |menu|}}
+            {{#menu.list}}
+              {{#menu.item}}A Menu Item{{/menu.item}}
+              {{#menu.item}}Another Menu Item{{/menu.item}}
+            {{/menu.list}}
+        {{/mdc-menu}}
+      </div>
+    </div>
+    <div class="item">{{code-snippet name="mdc-menu__open-from-bottom-left.hbs"}}</div>
+  </section>
+</div>
+
+<div class="demo">
+  <h1 class="mdc-typography--title">Open From Bottom Right</h1>
+  <section>
+    <div class="item">
+      {{#mdc-button click=(action (mut isShowingBottomRightAnchoredMenu) true)}}Open Menu{{/mdc-button}}
+      {{#mdc-menu
+        isOpened=isShowingBottomRightAnchoredMenu
+        isOpenedFromBottomRight=true
+        cancel=(action (mut isShowingBottomRightAnchoredMenu) false)
+        select=(action (mut isShowingBottomRightAnchoredMenu) false) as |menu|}}
+          {{#menu.list}}
+            {{#menu.item}}A Menu Item{{/menu.item}}
+            {{#menu.item}}Another Menu Item{{/menu.item}}
+          {{/menu.list}}
+      {{/mdc-menu}}
+    </div>
+    <div class="item">{{code-snippet name="mdc-menu__open-from-bottom-right.hbs"}}</div>
+  </section>
 </div>

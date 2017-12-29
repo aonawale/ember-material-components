@@ -7,8 +7,8 @@ export default MDCBase.extend({
   mdcClass: mdc.snackbar.MDCSnackbar,
   message: null,
   timeout: 2750,
-  isShowing: true,
-  isMultiline: false,
+  isShown: true,
+  multiline: false,
   actionText: null,
   actionHandler: null,
   actionOnBottom: false,
@@ -17,8 +17,6 @@ export default MDCBase.extend({
   ariaAtomic: 'true',
   ariaHidden: 'true',
   isStartAligned: false,
-
-  _mdcComponent: null,
 
   classNames: ['mdc-snackbar'],
   classNameBindings: [
@@ -30,15 +28,15 @@ export default MDCBase.extend({
     'ariaHidden:aria-hidden'
   ],
 
-  dataObj: computed('message', 'timeout', 'isMultiline', 'actionText', 'actionHandler', 'actionOnBottom', function() {
-    return getProperties(this, 'message', 'timeout', 'isMultiline', 'actionText', 'actionHandler', 'actionOnBottom');
+  dataObj: computed('message', 'timeout', 'multiline', 'actionText', 'actionHandler', 'actionOnBottom', function() {
+    return getProperties(this, 'message', 'timeout', 'multiline', 'actionText', 'actionHandler', 'actionOnBottom');
   }),
 
   didInsertElement() {
     this._super(...arguments);
     let snackbar = get(this, '_mdcComponent');
 
-    if (get(this, 'isShowing')) {
+    if (get(this, 'isShown')) {
       snackbar.show(get(this, 'dataObj'));
     }
   },
@@ -47,13 +45,13 @@ export default MDCBase.extend({
     this._super(...arguments);
     let snackbar = get(this, '_mdcComponent');
 
-    if (get(this, 'isShowing')) {
+    if (get(this, 'isShown')) {
       snackbar.show(get(this, 'dataObj'));
     }
   },
 
   updateElement(mdcComponent) {
-    mdcComponent.dismissesOnAction = get(this, 'dismissesOnAction');
+    mdcComponent.dismissesOnAction = !!get(this, 'dismissesOnAction');
   },
 
   bindListeners(mdcComponent) {

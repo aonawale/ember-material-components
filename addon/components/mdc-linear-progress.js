@@ -12,8 +12,6 @@ export default MDCBase.extend({
   isReversed: false,
   isDeterminate: true,
 
-  _mdcComponent: null,
-
   classNames: ['mdc-linear-progress'],
   classNameBindings: [
     'isClosed:mdc-linear-progress--closed',

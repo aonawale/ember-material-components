@@ -1,6 +1,5 @@
 import Ripple from '../mixins/ripple';
 import Component from '@ember/component';
-import { bool } from '@ember/object/computed';
 import layout from '../templates/components/mdc-button';
 
 export default Component.extend(Ripple, {
@@ -22,9 +21,5 @@ export default Component.extend(Ripple, {
     'isStroked:mdc-button--stroked',
     'isUnelevated:mdc-button--unelevated'
   ],
-  attributeBindings: ['isDisabled:disabled', 'for'],
-
-  _mdcComponent: null,
-
-  hasIcon: bool('icon')
+  attributeBindings: ['isDisabled:disabled', 'for']
 });

@@ -1,0 +1,38 @@
+{{!-- BEGIN-SNIPPET mdc-select__default --}}
+{{#mdc-select label="Pick a Food Group" selectedIndex=3 as |select|}}
+  {{#select.menu as |menu|}}
+    {{#menu.list}}
+      {{#select.option}}Bread, Cereal, Rice, and Pasta{{/select.option}}
+      {{#select.option}}Vegetables{{/select.option}}
+      {{#select.option}}Fruit{{/select.option}}
+      {{#select.option}}Milk, Yogurt, and Cheese{{/select.option}}
+      {{#select.option}}Meat, Poultry, Fish, Dry Beans, Eggs, and Nuts{{/select.option}}
+      {{#select.option}}Fats, Oils, and Sweets{{/select.option}}
+    {{/menu.list}}
+  {{/select.menu}}
+{{/mdc-select}}
+{{!-- END-SNIPPET --}}
+
+{{!-- BEGIN-SNIPPET mdc-select__disabled --}}
+{{#mdc-select label="Disabled Food Group" isDisabled=true as |select|}}
+  {{#select.menu as |menu|}}
+    {{#menu.list}}
+      {{#select.option}}Bread, Cereal, Rice, and Pasta{{/select.option}}
+      {{#select.option}}Vegetables{{/select.option}}
+    {{/menu.list}}
+  {{/select.menu}}
+{{/mdc-select}}
+{{!-- END-SNIPPET --}}
+
+{{!-- BEGIN-SNIPPET mdc-select__disabled-option --}}
+{{#mdc-select label="Disabled Item Food Group" as |select|}}
+  {{#select.menu as |menu|}}
+    {{#menu.list}}
+      {{#select.option}}Bread, Cereal, Rice, and Pasta{{/select.option}}
+      {{#select.option isDisabled=true}}Vegetables{{/select.option}}
+      {{#select.option}}Meat, Poultry, Fish, Dry Beans, Eggs, and Nuts{{/select.option}}
+      {{#select.option isDisabled=true}}Fats, Oils, and Sweets{{/select.option}}
+    {{/menu.list}}
+  {{/select.menu}}
+{{/mdc-select}}
+{{!-- END-SNIPPET --}}

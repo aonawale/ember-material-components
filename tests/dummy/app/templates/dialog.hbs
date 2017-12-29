@@ -1,7 +1,7 @@
 <div class="demo">
   <h1 class="mdc-typography--title">Default Dialog</h1>
   <section>
-    <div class="item">{{mdc-button text="SHOW DIALOG" click=(action (mut isShowingDialog) true)}}</div>
+    <div class="item">{{#mdc-button click=(action (mut isShowingDialog) true)}}SHOW DIALOG{{/mdc-button}}</div>
     <div class="item">{{code-snippet name="mdc-dialog__default.hbs"}}</div>
   </section>
 </div>
@@ -9,7 +9,7 @@
 <div class="demo">
   <h1 class="mdc-typography--title">Scrolling Dialog</h1>
   <section>
-    <div class="item">{{mdc-button text="SHOW SCROLLING DIALOG" click=(action (mut isShowingScrollingDialog) true)}}</div>
+    <div class="item">{{#mdc-button click=(action (mut isShowingScrollingDialog) true)}}SHOW SCROLLING DIALOG{{/mdc-button}}</div>
     <div class="item">{{code-snippet name="mdc-dialog__scrolling.hbs"}}</div>
   </section>
 </div>
@@ -28,8 +28,8 @@
       Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.
     </section>
     <footer class="mdc-dialog__footer">
-      {{dialog.footer-action text="Decline" click=(action (mut isShowingDialog) false)}}
-      {{dialog.footer-action text="Accept" click=(action (mut isShowingDialog) false)}}
+      {{#dialog.footer-action click=(action (mut isShowingDialog) false)}}Decline{{/dialog.footer-action}}
+      {{#dialog.footer-action click=(action (mut isShowingDialog) false)}}Accept{{/dialog.footer-action}}
     </footer>
 {{/mdc-dialog}}
 
@@ -59,7 +59,7 @@
       </ul>
     </section>
     <footer class="mdc-dialog__footer">
-      {{dialog.footer-action text="Decline" click=(action (mut isShowingScrollingDialog) false)}}
-      {{dialog.footer-action text="Accept" click=(action (mut isShowingScrollingDialog) false)}}
+      {{#dialog.footer-action click=(action (mut isShowingScrollingDialog) false)}}Decline{{/dialog.footer-action}}
+      {{#dialog.footer-action click=(action (mut isShowingScrollingDialog) false)}}Accept{{/dialog.footer-action}}
     </footer>
 {{/mdc-dialog}}

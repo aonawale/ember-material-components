@@ -1,38 +1,56 @@
-<p>
-  {{#mdc-select label="Pick a Food Group" selectedIndex=3 as |select|}}
-    {{#select.menu as |menu|}}
-      {{#menu.list as |list|}}
-        {{#list.item role="option"}}Bread, Cereal, Rice, and Pasta{{/list.item}}
-        {{#list.item role="option"}}Vegetables{{/list.item}}
-        {{#list.item role="option"}}Fruit{{/list.item}}
-        {{#list.item role="option"}}Milk, Yogurt, and Cheese{{/list.item}}
-        {{#list.item role="option"}}Meat, Poultry, Fish, Dry Beans, Eggs, and Nuts{{/list.item}}
-        {{#list.item role="option"}}Fats, Oils, and Sweets{{/list.item}}
-      {{/menu.list}}
-    {{/select.menu}}
-  {{/mdc-select}}
-</p>
+<div class="demo">
+  <h1 class="mdc-typography--title">Select</h1>
+  <section>
+    <div class="item">
+      {{#mdc-select label="Pick a Food Group" selectedIndex=3 as |select|}}
+        {{#select.menu as |menu|}}
+          {{#menu.list}}
+            {{#select.option}}Bread, Cereal, Rice, and Pasta{{/select.option}}
+            {{#select.option}}Vegetables{{/select.option}}
+            {{#select.option}}Fruit{{/select.option}}
+            {{#select.option}}Milk, Yogurt, and Cheese{{/select.option}}
+            {{#select.option}}Meat, Poultry, Fish, Dry Beans, Eggs, and Nuts{{/select.option}}
+            {{#select.option}}Fats, Oils, and Sweets{{/select.option}}
+          {{/menu.list}}
+        {{/select.menu}}
+      {{/mdc-select}}
+    </div>
+    <div class="item">{{code-snippet name="mdc-select__default.hbs"}}</div>
+  </section>
+</div>
 
-<p>
-  {{#mdc-select label="Disabled Food Group" isDisabled=true as |select|}}
-    {{#select.menu as |menu|}}
-      {{#menu.list as |list|}}
-        {{#list.item role="option"}}Bread, Cereal, Rice, and Pasta{{/list.item}}
-        {{#list.item role="option"}}Vegetables{{/list.item}}
-      {{/menu.list}}
-    {{/select.menu}}
-  {{/mdc-select}}
-</p>
+<div class="demo">
+  <h1 class="mdc-typography--title">Disabled Select</h1>
+  <section>
+    <div class="item">
+      {{#mdc-select label="Disabled Food Group" isDisabled=true as |select|}}
+        {{#select.menu as |menu|}}
+          {{#menu.list}}
+            {{#select.option}}Bread, Cereal, Rice, and Pasta{{/select.option}}
+            {{#select.option}}Vegetables{{/select.option}}
+          {{/menu.list}}
+        {{/select.menu}}
+      {{/mdc-select}}
+    </div>
+    <div class="item">{{code-snippet name="mdc-select__disabled.hbs"}}</div>
+  </section>
+</div>
 
-<p>
-  {{#mdc-select label="Disabled Item Food Group" as |select|}}
-    {{#select.menu as |menu|}}
-      {{#menu.list as |list|}}
-        {{#list.item role="option"}}Bread, Cereal, Rice, and Pasta{{/list.item}}
-        {{#list.item role="option" isDisabled=true}}Vegetables{{/list.item}}
-        {{#list.item role="option"}}Meat, Poultry, Fish, Dry Beans, Eggs, and Nuts{{/list.item}}
-        {{#list.item role="option" isDisabled=true}}Fats, Oils, and Sweets{{/list.item}}
-      {{/menu.list}}
-    {{/select.menu}}
-  {{/mdc-select}}
-</p>
+<div class="demo">
+  <h1 class="mdc-typography--title">Disabled Options</h1>
+  <section>
+    <div class="item">
+      {{#mdc-select label="Disabled Item Food Group" as |select|}}
+        {{#select.menu as |menu|}}
+          {{#menu.list}}
+            {{#select.option}}Bread, Cereal, Rice, and Pasta{{/select.option}}
+            {{#select.option isDisabled=true}}Vegetables{{/select.option}}
+            {{#select.option}}Meat, Poultry, Fish, Dry Beans, Eggs, and Nuts{{/select.option}}
+            {{#select.option isDisabled=true}}Fats, Oils, and Sweets{{/select.option}}
+          {{/menu.list}}
+        {{/select.menu}}
+      {{/mdc-select}}
+    </div>
+    <div class="item">{{code-snippet name="mdc-select__disabled-option.hbs"}}</div>
+  </section>
+</div>

@@ -1,4 +1,1 @@
-{{#if icon}}
-  {{mdc-icon icon class="mdc-button__icon"}}
-{{/if}}
-{{text}}{{yield}}
+{{yield (hash icon=(component 'mdc-icon' class='mdc-button__icon'))}}

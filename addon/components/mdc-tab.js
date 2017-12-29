@@ -16,14 +16,14 @@ export default MDCBase.extend({
   ],
   attributeBindings: ['href'],
 
-  bindListeners(mdcComponent) {
-    mdcComponent.listen('MDCTab:selected', get(this, 'selected'));
-  },
-
   didUpdate() {
     this._super(...arguments);
     let tab = get(this, '_mdcComponent');
     tab && this.bindListeners(tab)
+  },
+
+  bindListeners(mdcComponent) {
+    mdcComponent.listen('MDCTab:selected', get(this, 'selected'));
   },
 
   updateElement(mdcComponent) {

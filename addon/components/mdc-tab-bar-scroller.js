@@ -3,9 +3,9 @@ import layout from '../templates/components/mdc-tab-bar-scroller';
 
 export default MDCBase.extend({
   layout,
+  mdcClass: mdc.tabs.MDCTabBarScroller,
   nextIcon: 'navigate_next',
   prevIcon: 'navigate_before',
-  mdcClass: mdc.tabs.MDCTabBarScroller,
   classNames: ['mdc-tab-bar-scroller'],
   classNameBindings: [
     'isActive:mdc-tab--active',

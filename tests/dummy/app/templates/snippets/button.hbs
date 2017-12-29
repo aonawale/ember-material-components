@@ -1,35 +1,40 @@
 {{!-- BEGIN-SNIPPET mdc-button__baseline --}}
-  {{mdc-button text="BASELINE"}}
+{{#mdc-button}}BASELINE{{/mdc-button}}
 {{!-- END-SNIPPET --}}
 
 {{!-- BEGIN-SNIPPET mdc-button__icon --}}
-  {{mdc-button icon="alram"}}
+{{#mdc-button as |button|}}
+  {{button.icon "alarm"}}
+{{/mdc-button}}
 {{!-- END-SNIPPET --}}
 
 {{!-- BEGIN-SNIPPET mdc-button__icon-text --}}
-  {{mdc-button text="ICON" icon="alram"}}
+{{#mdc-button as |button|}}
+  ICON
+  {{button.icon "alarm"}}
+{{/mdc-button}}
 {{!-- END-SNIPPET --}}
 
 {{!-- BEGIN-SNIPPET mdc-button__raised --}}
-  {{mdc-button text="RAISED" isRaised=true}}
+{{#mdc-button isRaised=true}}RAISED{{/mdc-button}}
 {{!-- END-SNIPPET --}}
 
 {{!-- BEGIN-SNIPPET mdc-button__stroked --}}
-  {{mdc-button text="STROKED" isStroked=true}}
+{{#mdc-button isStroked=true}}STROKED{{/mdc-button}}
 {{!-- END-SNIPPET --}}
 
 {{!-- BEGIN-SNIPPET mdc-button__unelevated --}}
-  {{mdc-button text="UNELEVATED" isUnelevated=true}}
+{{#mdc-button isUnelevated=true}}UNELEVATED{{/mdc-button}}
 {{!-- END-SNIPPET --}}
 
 {{!-- BEGIN-SNIPPET mdc-button__dense --}}
-  {{mdc-button text="DENSE" isDense=true}}
+{{#mdc-button isDense=true}}DENSE{{/mdc-button}}
 {{!-- END-SNIPPET --}}
 
 {{!-- BEGIN-SNIPPET mdc-button__compact --}}
-  {{mdc-button text="COMPACT" isCompact=true}}
+{{#mdc-button isCompact=true}}COMPACT{{/mdc-button}}
 {{!-- END-SNIPPET --}}
 
 {{!-- BEGIN-SNIPPET mdc-button__disabled --}}
-  {{mdc-button text="DISABLED" isDisabled=true}}
+{{#mdc-button isDisabled=true}}DISABLED{{/mdc-button}}
 {{!-- END-SNIPPET --}}

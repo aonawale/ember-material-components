@@ -16,14 +16,14 @@ export default MDCBase.extend({
     'isIconTabBarWithText:mdc-tab-bar--icons-with-text'
   ],
 
-  bindListeners(mdcComponent) {
-    mdcComponent.listen('MDCTabBar:change', get(this, 'change'));
-  },
-
   didUpdate() {
     this._super(...arguments);
     let tabBar = get(this, '_mdcComponent');
     tabBar && this.bindListeners(tabBar);
+  },
+
+  bindListeners(mdcComponent) {
+    mdcComponent.listen('MDCTabBar:change', get(this, 'change'));
   },
 
   updateElement(mdcComponent) {

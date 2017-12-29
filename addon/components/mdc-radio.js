@@ -11,8 +11,6 @@ export default MDCBase.extend({
   isChecked: false,
   isDisabled: false,
 
-  _mdcComponent: null,
-
   classNames: ['mdc-radio'],
   classNameBindings: [
     'isDisabled:mdc-radio--disabled'

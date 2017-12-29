@@ -2,7 +2,7 @@
   <h1 class="mdc-typography--title">Temporary Drawer</h1>
   <section>
     <div class="item">
-      {{mdc-button text="SHOW TEMPORARY DRAWER" click=(action (mut temporaryDrawerOpened) true)}}
+      {{#mdc-button click=(action (mut temporaryDrawerOpened) true)}}SHOW TEMPORARY DRAWER{{/mdc-button}}
 
       {{#mdc-temporary-drawer isOpened=temporaryDrawerOpened close=(action (mut temporaryDrawerOpened) false) as |drawer|}}
         <header class="mdc-temporary-drawer__header">
@@ -12,11 +12,11 @@
         </header>
         {{#drawer.list as |list|}}
           {{#list.item isActivated=true as |item|}}
-            {{item.icon "inbox"}}
+            {{item.icon "inbox" class="mdc-list-item__start-detail"}}
             <span class="mdc-list-item__text">Inbox</span>
           {{/list.item}}
           {{#list.item as |item|}}
-            {{item.icon "star"}}
+            {{item.icon "star" class="mdc-list-item__start-detail"}}
             <span class="mdc-list-item__text">Star</span>
           {{/list.item}}
         {{/drawer.list}}
@@ -41,11 +41,11 @@
     {{#mdc-persistent-drawer isOpened=persistentDrawerOpened as |drawer|}}
       {{#drawer.list as |list|}}
         {{#list.item isActivated=true as |item|}}
-          {{item.icon "inbox"}}
+          {{item.icon "inbox" class="mdc-list-item__start-detail"}}
           <span class="mdc-list-item__text">Inbox</span>
         {{/list.item}}
         {{#list.item as |item|}}
-          {{item.icon "star"}}
+          {{item.icon "star" class="mdc-list-item__start-detail"}}
           <span class="mdc-list-item__text">Star</span>
         {{/list.item}}
       {{/drawer.list}}
@@ -60,11 +60,11 @@
     {{#mdc-permanent-drawer as |drawer|}}
       {{#drawer.list as |list|}}
         {{#list.item isActivated=true as |item|}}
-          {{item.icon "inbox"}}
+          {{item.icon "inbox" class="mdc-list-item__start-detail"}}
           <span class="mdc-list-item__text">Inbox</span>
         {{/list.item}}
         {{#list.item as |item|}}
-          {{item.icon "star"}}
+          {{item.icon "star" class="mdc-list-item__start-detail"}}
           <span class="mdc-list-item__text">Star</span>
         {{/list.item}}
       {{/drawer.list}}
@@ -98,11 +98,11 @@
       {{#mdc-permanent-drawer hasSpacer=false as |drawer|}}
         {{#drawer.list as |list|}}
           {{#list.item isActivated=true as |item|}}
-            {{item.icon "inbox"}}
+            {{item.icon "inbox" class="mdc-list-item__start-detail"}}
             <span class="mdc-list-item__text">Inbox</span>
           {{/list.item}}
           {{#list.item as |item|}}
-            {{item.icon "star"}}
+            {{item.icon "star" class="mdc-list-item__start-detail"}}
             <span class="mdc-list-item__text">Star</span>
           {{/list.item}}
         {{/drawer.list}}

@@ -7,10 +7,10 @@ export default Component.extend(Ripple, {
   layout,
   tagName: 'li',
   role: null,
-  isDisabled: false,
-  hasRipples: false,
-  isSelected: false,
-  isActivated: false,
+  isDisabled: null,
+  hasRipples: null,
+  isSelected: null,
+  isActivated: null,
   classNames: ['mdc-list-item'],
   classNameBindings: [
     'isSelected:mdc-list-item--selected',
@@ -24,11 +24,21 @@ export default Component.extend(Ripple, {
   ],
 
   tabindex: computed('isDisabled', function() {
-    return get(this, 'isDisabled') ? '-1' : '0';
+    let isDisabled = get(this, 'isDisabled');
+    if (isDisabled === true) {
+      return '-1';
+    } else if (isDisabled === false) {
+      return '0';
+    }
   }),
 
   ariaDisabled: computed('isDisabled', function() {
-    return get(this, 'isDisabled') ? 'true' : 'false';
+    let isDisabled = get(this, 'isDisabled');
+    if (isDisabled === true) {
+      return 'true';
+    } else if (isDisabled === false) {
+      return 'false';
+    }
   }),
 
   ariaSelected: computed.oneWay('isSelected')
