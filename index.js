@@ -34,11 +34,11 @@ module.exports = {
   },
 
   treeForStyles: function treeForStyles(tree) {
-    var app;
-    var styleTrees = [];
-    var current = this;
-    var nodeModules = nodeModulesPath(this.root);
-    var materialPath = '@material';
+    let app;
+    let styleTrees = [];
+    let current = this;
+    let nodeModules = nodeModulesPath(this.root);
+    let materialPath = '@material';
 
     do {
       app = current.app || app;

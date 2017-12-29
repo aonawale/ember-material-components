@@ -47,6 +47,15 @@ export default MDCBase.extend({
   }),
 
   updateElement(mdcComponent) {
+    mdcComponent.ripple = null;
+
+    if (get(this, 'isBoxed')) {
+      mdcComponent.ripple = new mdc.ripple.MDCRipple(get(this, 'element'));
+    }
+    if (get(this, 'isOutlined')) {
+      mdcComponent.ripple = new mdc.ripple.MDCRipple(document.querySelector('.mdc-text-field__outline'));
+    }
+
     mdcComponent.valid = !!get(this, 'isValid');
     mdcComponent.disabled = !!get(this, 'isDisabled');
   }

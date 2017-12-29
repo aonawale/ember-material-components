@@ -1,1 +1,18 @@
-{{outlet}}
+<div class="demo">
+  <h1 class="mdc-typography--title">Normal Toolbar</h1>
+  <section>
+    <div class="item">
+      <div class="demo-page">
+        {{#mdc-toolbar as |toolbar|}}
+          <div class="mdc-toolbar__row">
+            <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
+              {{toolbar.menu}}
+              <span class="mdc-toolbar__title">Title</span>
+            </section>
+          </div>
+        {{/mdc-toolbar}}
+      </div>
+    </div>
+    <div class="item">{{code-snippet name="mdc-toolbar__normal.hbs"}}</div>
+  </section>
+</div>

@@ -32,6 +32,13 @@
   box-sizing: border-box;
 }
 
+.demo-page {
+  @extend .demo-content;
+  background: lightgray;
+  height: 400px;
+  width: 350px;
+}
+
 #main-container {
   display: flex;
 }
