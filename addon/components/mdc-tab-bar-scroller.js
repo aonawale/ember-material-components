@@ -1,9 +1,10 @@
 import MDCBase from './-mdc-base';
+import { MDCTabBarScroller } from '@material/tabs';
 import layout from '../templates/components/mdc-tab-bar-scroller';
 
 export default MDCBase.extend({
   layout,
-  mdcClass: mdc.tabs.MDCTabBarScroller,
+  mdcClass: MDCTabBarScroller,
   nextIcon: 'navigate_next',
   prevIcon: 'navigate_before',
   classNames: ['mdc-tab-bar-scroller'],

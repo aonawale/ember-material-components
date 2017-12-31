@@ -1,10 +1,11 @@
 import MDCBase from './-mdc-base';
+import { MDCSnackbar } from '@material/snackbar';
 import layout from '../templates/components/mdc-snackbar';
 import { get, getProperties, computed } from '@ember/object';
 
 export default MDCBase.extend({
   layout,
-  mdcClass: mdc.snackbar.MDCSnackbar,
+  mdcClass: MDCSnackbar,
   message: null,
   timeout: 2750,
   isShown: true,

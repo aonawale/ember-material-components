@@ -1,10 +1,11 @@
 import MDCBase from './-mdc-base';
 import { get } from '@ember/object';
+import { MDCLinearProgress } from '@material/linear-progress';
 import layout from '../templates/components/mdc-linear-progress';
 
 export default MDCBase.extend({
   layout,
-  mdcClass: mdc.linearProgress.MDCLinearProgress,
+  mdcClass: MDCLinearProgress,
   role: 'progressbar',
   buffer: null,
   progress: 0,

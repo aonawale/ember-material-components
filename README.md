@@ -20,7 +20,7 @@ ember install ember-cli-sass
 ```
 
 ### Without SASS
-This addon can be used without SASS (relying on pure CSS for styles). If you choose this path, you'll need to manually include all CSS files for each material web components by adding the following lines to your `ember-cli-build.js`.
+This addon can be used without SASS (relying on pure CSS for styles). If you choose this path, you'll need to manually include all CSS files for each material web components by adding the following lines to your `ember-cli-build.js` file.
 
 ```js
 app.import('node_modules/@material/button/dist/mdc.button.css');

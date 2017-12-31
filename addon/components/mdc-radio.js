@@ -1,11 +1,12 @@
 import MDCBase from './-mdc-base';
+import { MDCRadio } from '@material/radio';
 import { get, computed } from '@ember/object';
 import { guidFor } from '@ember/object/internals';
 import layout from '../templates/components/mdc-radio';
 
 export default MDCBase.extend({
   layout,
-  mdcClass: mdc.radio.MDCRadio,
+  mdcClass: MDCRadio,
   name: null,
   value: null,
   isChecked: false,

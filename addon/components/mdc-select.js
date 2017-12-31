@@ -1,11 +1,12 @@
 import MDCBase from './-mdc-base';
 import { get } from '@ember/object';
 import { gt } from '@ember/object/computed';
+import { MDCSelect } from '@material/select';
 import layout from '../templates/components/mdc-select';
 
 export default MDCBase.extend({
   layout,
-  mdcClass: mdc.select.MDCSelect,
+  mdcClass: MDCSelect,
   role: 'listbox',
   tabindex: 0,
   label: null,

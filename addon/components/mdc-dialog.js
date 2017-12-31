@@ -1,11 +1,12 @@
 import MDCBase from './-mdc-base';
 import { get } from '@ember/object';
+import { MDCDialog } from '@material/dialog';
 import { reads } from '@ember/object/computed';
 import layout from '../templates/components/mdc-dialog';
 
 export default MDCBase.extend({
   layout,
-  mdcClass: mdc.dialog.MDCDialog,
+  mdcClass: MDCDialog,
   role: 'alertdialog',
   ariaLabelledby: null,
   ariaDescribedby: null,

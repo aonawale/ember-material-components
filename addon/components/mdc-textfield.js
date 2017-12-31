@@ -1,12 +1,14 @@
 import MDCBase from './-mdc-base';
 import { get, computed } from '@ember/object';
+import { MDCRipple } from '@material/ripple';
+import { MDCTextField } from '@material/textfield';
 import { bool, not, and } from '@ember/object/computed';
 import { guidFor } from '@ember/object/internals';
 import layout from '../templates/components/mdc-textfield';
 
 export default MDCBase.extend({
   layout,
-  mdcClass: mdc.textfield.MDCTextField,
+  mdcClass: MDCTextField,
   icon: null,
   label: null,
   value: null,
@@ -50,10 +52,10 @@ export default MDCBase.extend({
     mdcComponent.ripple = null;
 
     if (get(this, 'isBoxed')) {
-      mdcComponent.ripple = new mdc.ripple.MDCRipple(get(this, 'element'));
+      mdcComponent.ripple = new MDCRipple(get(this, 'element'));
     }
     if (get(this, 'isOutlined')) {
-      mdcComponent.ripple = new mdc.ripple.MDCRipple(document.querySelector('.mdc-text-field__outline'));
+      mdcComponent.ripple = new MDCRipple(document.querySelector('.mdc-text-field__outline'));
     }
 
     mdcComponent.valid = !!get(this, 'isValid');

@@ -1,5 +1,6 @@
 import MDCIcon from './mdc-icon';
 import { next } from '@ember/runloop';
+import { MDCIconToggle } from '@material/icon-toggle';
 import { get, set, computed } from '@ember/object';
 
 export default MDCIcon.extend({
@@ -50,7 +51,7 @@ export default MDCIcon.extend({
 
   didInsertElement() {
     this._super(...arguments);
-    let iconToggle = new mdc.iconToggle.MDCIconToggle(get(this, 'element'));
+    let iconToggle = new MDCIconToggle(get(this, 'element'));
     set(this, '_mdcComponent', iconToggle);
     iconToggle.listen('MDCToolbar:change', get(this, 'change'));
   },

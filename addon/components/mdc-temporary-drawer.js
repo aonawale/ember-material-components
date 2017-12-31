@@ -1,10 +1,11 @@
 import MDCBase from './-mdc-base';
 import { get } from '@ember/object';
+import { MDCTemporaryDrawer } from '@material/drawer';
 import layout from '../templates/components/mdc-temporary-drawer';
 
 export default MDCBase.extend({
   layout,
-  mdcClass: mdc.drawer.MDCTemporaryDrawer,
+  mdcClass: MDCTemporaryDrawer,
   isOpened: true,
   hasSpacer: false,
   tagName: 'aside',

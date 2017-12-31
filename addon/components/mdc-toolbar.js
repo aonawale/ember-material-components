@@ -2,6 +2,7 @@ import { get } from '@ember/object';
 import Component from '@ember/component';
 import { isPresent } from '@ember/utils';
 import { and } from '@ember/object/computed';
+import { MDCToolbar } from '@material/toolbar';
 import layout from '../templates/components/mdc-toolbar';
 
 export default Component.extend({
@@ -29,7 +30,7 @@ export default Component.extend({
     this._super(...arguments);
     let contentElement = get(this, 'contentElement');
     let contentSelector = get(this, 'contentSelector');
-    let toolbar = mdc.toolbar.MDCToolbar.attachTo(get(this, 'element'));
+    let toolbar = MDCToolbar.attachTo(get(this, 'element'));
 
     if (isPresent(contentElement)) {
       toolbar.fixedAdjustElement = contentElement;

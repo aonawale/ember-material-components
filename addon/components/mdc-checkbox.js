@@ -1,11 +1,12 @@
 import MDCBase from './-mdc-base';
+import { MDCCheckbox } from '@material/checkbox';
 import { computed, get } from '@ember/object';
 import { guidFor } from '@ember/object/internals';
 import layout from '../templates/components/mdc-checkbox';
 
 export default MDCBase.extend({
   layout,
-  mdcClass: mdc.checkbox.MDCCheckbox,
+  mdcClass: MDCCheckbox,
   value: null,
   isChecked: false,
   isDisabled: false,

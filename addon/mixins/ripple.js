@@ -1,5 +1,6 @@
 import Mixin from '@ember/object/mixin';
 import { get, set } from '@ember/object';
+import { MDCRipple } from '@material/ripple';
 
 export default Mixin.create({
   hasRipples: true,
@@ -10,7 +11,7 @@ export default Mixin.create({
   didInsertElement() {
     this._super(...arguments);
     if (get(this, 'hasRipples')) {
-      let ripple = new mdc.ripple.MDCRipple(get(this, 'element'));
+      let ripple = new MDCRipple(get(this, 'element'));
       set(this, '_mdcRipple', ripple);
     }
   },

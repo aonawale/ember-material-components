@@ -1,10 +1,11 @@
 import MDCBase from './-mdc-base';
 import { get } from '@ember/object';
+import { MDCTab } from '@material/tabs';
 import layout from '../templates/components/mdc-tab';
 
 export default MDCBase.extend({
   layout,
-  mdcClass: mdc.tabs.MDCTab,
+  mdcClass: MDCTab,
   tagName: 'a',
   isActive: false,
   isIconTabWithText: false,

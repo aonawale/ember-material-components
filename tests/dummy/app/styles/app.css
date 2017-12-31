@@ -1,5 +1,3 @@
-@import "ember-material-components";
-
 .my-bordered-list {
   /* remove the side padding. we'll be placing it around the item instead. */
   padding-right: 0;

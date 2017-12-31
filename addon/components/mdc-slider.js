@@ -1,10 +1,11 @@
 import MDCBase from './-mdc-base';
 import { get } from '@ember/object';
+import { MDCSlider } from '@material/slider';
 import layout from '../templates/components/mdc-slider';
 
 export default MDCBase.extend({
   layout,
-  mdcClass: mdc.slider.MDCSlider,
+  mdcClass: MDCSlider,
   role: 'slider',
   tabindex: 0,
   label: null,

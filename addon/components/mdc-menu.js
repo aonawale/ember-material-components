@@ -1,10 +1,11 @@
 import MDCBase from './-mdc-base';
 import { get } from '@ember/object';
+import { MDCSimpleMenu } from '@material/menu';
 import layout from '../templates/components/mdc-menu';
 
 export default MDCBase.extend({
   layout,
-  mdcClass: mdc.menu.MDCSimpleMenu,
+  mdcClass: MDCSimpleMenu,
   tabindex: '-1',
   isOpened: false,
   isOpenedFromTopLeft: false,

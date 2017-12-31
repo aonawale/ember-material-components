@@ -1,10 +1,11 @@
 import MDCBase from './-mdc-base';
 import { get } from '@ember/object';
+import { MDCPersistentDrawer } from '@material/drawer';
 import layout from '../templates/components/mdc-persistent-drawer';
 
 export default MDCBase.extend({
   layout,
-  mdcClass: mdc.drawer.MDCPersistentDrawer,
+  mdcClass: MDCPersistentDrawer,
   isOpened: true,
   tagName: 'aside',
   classNames: ['mdc-persistent-drawer', 'mdc-typography'],
