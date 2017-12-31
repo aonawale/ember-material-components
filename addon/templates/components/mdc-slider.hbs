@@ -1,7 +1,9 @@
 <div class="mdc-slider__track-container">
   <div class="mdc-slider__track"></div>
-  {{#if (and isDiscrete hasTrackMarkers)}}
-    <div class="mdc-slider__track-marker-container"></div>
+  {{#if isDiscrete}}
+    {{#if hasTrackMarkers}}
+      <div class="mdc-slider__track-marker-container"></div>
+    {{/if}}
   {{/if}}
 </div>
 <div class="mdc-slider__thumb-container">

@@ -15,13 +15,13 @@
       {{mdc-textfield
         label="Email"
         icon=(if hasEmailIcon 'email')
-        isBoxed=(or hasEmailIcon isEmailBoxed)
+        isBoxed=(if hasEmailIcon true isEmailBoxed)
         isDense=isEmailDense
-        isValid=(not isEmailValid)
+        isValid=(unless isEmailValid true)
         isRequired=isEmailRequired
         isDisabled=isEmailDisabled
         ariaControls="email-helper-text"
-        isTrailingIcon=(and hasEmailIcon isEmailTrailingIcon)}}
+        isTrailingIcon=isEmailTrailingIcon}}
 
       {{#if isShowingHelperText}}
         <p id="email-helper-text" class="mdc-text-field-helper-text {{if isPersistentEmailHelperText "mdc-text-field-helper-text--persistent"}} {{if isValidationEmailHelperText "mdc-text-field-helper-text--validation-msg"}}" aria-hidden="true">

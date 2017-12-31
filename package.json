@@ -1,17 +1,19 @@
 {
   "name": "ember-material-components",
-  "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "version": "0.0.1",
+  "description": "Google's Material Design Components for Ember JS apps",
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "material-design"
   ],
   "license": "MIT",
-  "author": "",
+  "author": "Ahmed Onawale <ahmedonawale@gmail.com>",
   "directories": {
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "",
+  "repository": "https://github.com/aonawale/ember-material-components.git",
+  "homepage": "https://aonawale.github.io",
   "scripts": {
     "build": "ember build",
     "start": "ember serve",
@@ -69,13 +71,13 @@
     "ember-load-initializers": "^1.0.0",
     "ember-resolver": "^4.0.0",
     "ember-source": "~2.17.0",
-    "ember-truth-helpers": "^2.0.0",
     "loader.js": "^4.2.3"
   },
   "engines": {
     "node": "^4.5 || 6.* || >= 7.*"
   },
   "ember-addon": {
-    "configPath": "tests/dummy/config"
+    "configPath": "tests/dummy/config",
+    "demoURL": "https://aonawale.github.io/ember-material-components"
   }
 }

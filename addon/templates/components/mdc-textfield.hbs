@@ -14,8 +14,10 @@
   aria-label={{ariaLabel}}
   aria-controls={{ariaControls}}>
 
-{{#if (and (not isFullWidth) label)}}
-  <label class="mdc-text-field__label" for={{inputId}}>{{label}}</label>
+{{#if label}}
+  {{#unless isFullWidth}}
+    <label class="mdc-text-field__label" for={{inputId}}>{{label}}</label>
+  {{/unless}}
 {{/if}}
 {{#if isTrailingIcon}}
   {{mdc-icon icon class="mdc-text-field__icon" tabindex=iconTabindex}}

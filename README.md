@@ -1,6 +1,6 @@
 # ember-material-components
 
-Google's [Material Design Components](https://material-components-web.appspot.com/) for Ember.js apps
+Google's [Material Design Components](https://material-components-web.appspot.com/) for Ember JS apps
 
 ## Installation
 ```sh
