@@ -4,7 +4,7 @@ export default Controller.extend({
   actions: {
     toolbarChange(evt) {
       let flexibleExpansionRatio = evt.detail.flexibleExpansionRatio;
-      console.log(flexibleExpansionRatio.toFixed(2));
+      console.log(flexibleExpansionRatio.toFixed(2)); // eslint-disable-line
     }
   }
 });

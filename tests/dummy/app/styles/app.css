@@ -1,3 +1,11 @@
+/*
+  :root {
+    --mdc-theme-primary: #ce93d8; // Purple 500
+    --mdc-theme-secondary: #6a1b9a; // Orange A200
+    --mdc-theme-background: #fff; // White
+  }
+*/
+
 .my-bordered-list {
   /* remove the side padding. we'll be placing it around the item instead. */
   padding-right: 0;

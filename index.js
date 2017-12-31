@@ -25,6 +25,7 @@ const materialPackages = [
   { name: '@material/menu', css: true, js: true },
   { name: '@material/radio', css: true, js: true },
   { name: '@material/ripple', css: true, js: true },
+  { name: '@material/rtl', css: false, js: false },
   { name: '@material/select', css: true, js: true },
   { name: '@material/selection-control', css: false, js: true },
   { name: '@material/slider', css: true, js: true },
@@ -51,7 +52,7 @@ module.exports = {
           production: `vendor/ember-material-components/dist/mdc.${camelize(pkgBaseName)}.min.js`
         }, { using: [{ transformation: 'amd', as: pkg.name }] });
       }
-      if (pkg.css) {
+      if (pkg.css && !app.project.findAddonByName('ember-cli-sass')) {
         app.import({
           development: `vendor/ember-material-components/dist/mdc.${pkgBaseName}.css`,
           production: `vendor/ember-material-components/dist/mdc.${pkgBaseName}.min.css`,
@@ -74,6 +75,25 @@ module.exports = {
     });
 
     return this._super(mergeTrees(trees, { overwrite: true }));
+  },
+
+  treeForStyles: function(tree) {
+    let app;
+    let trees = [];
+    let current = this;
+    let nodeModulesDir = nodeModulesPath(this.root);
+
+    do {
+      app = current.app || app;
+    } while (current.parent.parent && (current = current.parent));
+
+    if (app.project.findAddonByName('ember-cli-sass')) {
+      trees.push(new Funnel(path.join(nodeModulesDir, '@material'), { destDir: '@material' }));
+    }
+
+    tree && trees.push(tree);
+
+    return mergeTrees(trees, { overwrite: true });
   }
 };
 
