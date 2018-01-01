@@ -1,10 +1,8 @@
 /* eslint-env node */
 'use strict';
 
-const path = require('path');
 const Funnel = require('broccoli-funnel');
 const mergeTrees = require('broccoli-merge-trees');
-const nodeModulesPath = require('node-modules-path');
 
 const materialPackages = [
   { name: '@material/animation', css: true, js: true },
@@ -62,7 +60,6 @@ module.exports = {
   },
 
   treeForVendor: function () {
-    let nodeModulesDir = nodeModulesPath(this.root);
     let trees = materialPackages.map(function(pkg) {
       let include = [];
       if (pkg.css) {
@@ -71,7 +68,7 @@ module.exports = {
       if (pkg.js) {
         include.push('dist/mdc.*.js');
       }
-      return new Funnel(path.join(nodeModulesDir, pkg.name), { destDir: 'ember-material-components', include: include });
+      return new Funnel(`node_modules/${pkg.name}`, { destDir: 'ember-material-components', include: include });
     });
 
     return this._super(mergeTrees(trees, { overwrite: true }));
@@ -81,14 +78,13 @@ module.exports = {
     let app;
     let trees = [];
     let current = this;
-    let nodeModulesDir = nodeModulesPath(this.root);
 
     do {
       app = current.app || app;
     } while (current.parent.parent && (current = current.parent));
 
     if (app.project.findAddonByName('ember-cli-sass')) {
-      trees.push(new Funnel(path.join(nodeModulesDir, '@material'), { destDir: '@material' }));
+      trees.push(new Funnel(`node_modules/@material`, { destDir: '@material', include: ['**/*.{scss,sass}'] }));
     }
 
     tree && trees.push(tree);
