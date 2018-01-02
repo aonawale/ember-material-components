@@ -1,6 +1,6 @@
 {
   "name": "ember-material-components",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Google's Material Design Components for Ember JS apps",
   "keywords": [
     "ember-addon",
