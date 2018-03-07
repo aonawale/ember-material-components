@@ -2,19 +2,18 @@
   {{mdc-icon icon class="mdc-text-field__icon" tabindex=iconTabindex}}
 {{/if}}
 
-<textarea
-  rows={{rows}}
-  cols={{cols}}
-  id={{inputId}}
+{{textarea
+  rows=rows
+  cols=cols
+  id=inputId
   class="mdc-text-field__input"
-  value={{value}}
-  placeholder={{placeholder}}
-  disabled={{isDisabled}}
-  required={{isRequired}}
-  minlength={{minLength}}
-  aria-label={{ariaLabel}}
-  aria-controls={{ariaControls}}>
-</textarea>
+  value=value
+  placeholder=placeholder
+  disabled=isDisabled
+  required=isRequired
+  minlength=minLength
+  aria-label=ariaLabel
+  aria-controls=ariaControls}}
 
 {{#if label}}
   <label class="mdc-text-field__label" for={{inputId}}>{{label}}</label>

@@ -2,17 +2,17 @@
   {{mdc-icon icon class="mdc-text-field__icon" tabindex=iconTabindex}}
 {{/if}}
 
-<input
+{{input
   type="text"
-  id={{inputId}}
+  id=inputId
   class="mdc-text-field__input"
-  value={{value}}
-  placeholder={{placeholder}}
-  disabled={{isDisabled}}
-  required={{isRequired}}
-  minlength={{minLength}}
-  aria-label={{ariaLabel}}
-  aria-controls={{ariaControls}}>
+  value=value
+  placeholder=placeholder
+  disabled=isDisabled
+  required=isRequired
+  minlength=minLength
+  aria-label=ariaLabel
+  aria-controls=ariaControls}}
 
 {{#if label}}
   {{#unless isFullWidth}}
